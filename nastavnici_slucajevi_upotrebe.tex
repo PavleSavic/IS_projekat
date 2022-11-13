@@ -1,0 +1,182 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{cmsrb}
+\usepackage[OT2,T1]{fontenc} 
+\usepackage[serbian]{babel}
+
+
+\title{Nastavnici - slučajevi upotrebe}
+
+
+\begin{document}
+
+\maketitle
+
+\underline{\textbf{Slučaj upotrebe:} Nastavnik evidentira održani čas} \\
+
+1. \textbf{Kratak opis:} Nakon održanog časa nastavnik unosi informacije o nastavnoj temi pređenoj na tom času i upisuje odsutne učenike. Sistem validira i čuva unete podatke i obaveštava nastavnika o uspešno unetom izveštaju.\\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Nastavnik je registrovani korisnik sistema. Nastavnik ima pristup Internetu. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Izveštaj sa održanog časa je unet u sistem. Odsutnim učenicima zabeležen je izostanak. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik pristupa formi i unosi kredencijale 
+\item Sistem vrši autentifikaciju korisnika i odobrava pristup nastavniku
+\item Nastavnik pristupa listi održanih časova
+\item Nastavnik pritiska dugme za kreiranje novog izveštaja sa časa
+\item Sistem prikazuje formular za kreiranje novog izveštaja sa časa
+\item Nastavnik unosi tražene podatke (obavezna polja formulara su datum, odeljenje, nastavna tema i spisak odsutnih učenika)
+\item Nastavnik pritiskom na dugme potvrđuje unos
+\item Sistem vrši validaciju podataka
+\item Sistem čuva podatke
+\item Sistem vraća poruku o uspešno kreiranom izveštaju
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Nastavnik unosi pogrešne kredencijale - Ako u koraku (b) sistem utvrdi pogrešne kredencijale (nepostojeće korisničko ime ili pogrešna lozinka) obaveštava nastavnika obeležavanjem neispravnog polja. Nastavnik ispravlja neispravno polje. Proces se nastavlja iz koraka (a).
+\item Nastavnik unosi nevalidne podatke u formular - Ako u koraku (h) sistem utvrdi neispravno polje formulara sistem obaveštava nastavnika obeležavanjem nevalidnog polja. Nastavnik ispravlja neispravno polje. Proces se nastavlja iz koraka (f).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Kredencijali nastavnika su korisničko ime i šifra. Osnovne informacije koje nastavnik unosi u izveštaj sa časa jesu: datum, oznaka odeljenja, nastavna tema i spisak odsutnih učenika. Dodatne informacije koje može uneti: literatura za temu, domaći zadatak i napomene.\\
+
+\underline{\textbf{Slučaj upotrebe:} Nastavnik unosi dopunske i dodatne časove u raspored časova } \\
+
+1. \textbf{Kratak opis:} U dogovoru sa zainteresovanim učenicima nastavnik ažurira postojeći raspored časova dodajući kao 7. čas u prvoj smeni (predčas u drugoj smeni) dopunski ili dodatni čas. Sistem validira i čuva unete podatke i obaveštava nastavnika o uspešno ažuriranom rasporedu. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Nastavnik je registrovani korisnik sistema. Nastavnik ima pristup Internetu. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Dopunski ili dodatni čas dodat je u raspored časova \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik pristupa formi i unosi kredencijale 
+\item Sistem vrši autentifikaciju korisnika i odobrava pristup nastavniku
+\item Nastavnik pristupa stranici na kojoj je prikazan raspored časova
+\item Nastavnik pritiska na dugme ispod odgovarajućeg dana  
+\item Sistem otvara formular za upis podataka o času koji se dodaje (naziv predmeta, dopunska/dodatna, lista odeljenja)
+\item Nastavnik popunjava formular traženim podacima
+\item Nastavnik pritiskom na dugme potvrđuje unos časa u raspored
+\item Sistem validira unete podatke
+\item Sistem vrši proveru da li je došlo do preklapanja u rasporedu časova
+\item Sistem čuva podatke
+\item Sistem vraća poruku o uspešno ažuriranom rasporedu
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Nastavnik unosi pogrešne kredencijale - Ako u koraku (b) sistem utvrdi pogrešne kredencijale (nepostojeće korisničko ime ili pogrešna lozinka) obaveštava nastavnika obeležavanjem neispravnog polja. Nastavnik ispravlja neispravno polje. Proces se nastavlja iz koraka (a).
+\item Nastavnik unosi nevalidne podatke - Ako u koraku (h) sistem utvrdi nevalidne podatke (obavezna polja ostala nepopunjena) obaveštava nastavnika obeležavanjem neispravnog polja. Nastavnik ispravlja neispravno polje. Proces se nastavlja iz koraka (f).
+\item Neuspešna izmena rasporeda - Ako u koraku (i) sistem utvrdi preklapanje u rasporedu časova obaveštava nastavnika ispisivanjem časa koji se u rasporedu već nalazi u tom terminu. Nastavnik bira drugi dan i proces se nastavlja iz koraka (d).
+
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Kredencijali nastavnika su korisničko ime i šifra. Nastavnik dodatnu/dopunsku nastavu može zakazati samo u terminu 7. časa u prvoj smeni (predčas u drugoj smeni). \\
+
+\underline{\textbf{Slučaj upotrebe:} Nastavnik upisuje ocenu učeniku} \\
+
+1. \textbf{Kratak opis:} Nakon održane provere znanja (pismene ili usmene) nastavnik unosi ostvarenu ocenu učenika u elektronski dnevnik. Sistem validira i čuva unetu ocenu i obaveštava nastavnika o uspešno unetoj oceni.  \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Nastavnik je registrovani korisnik sistema. Nastavnik ima pristup Internetu. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Ocena učenika uneta je u elektronski dnevnik. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik pristupa formi i unosi kredencijale 
+\item Sistem vrši autentifikaciju korisnika i odobrava pristup nastavniku
+\item Nastavnik pristupa listi učenika podeljenih po odeljenjima kojima predaje
+\item Nastavnik vrši pretragu i pritiska dugme za pristup ocenama kod odgovarajućeg učenika
+\item Sistem otvara stranicu sa ocenama odgovarajućeg učenika
+\item Nastavnik unosi ocenu i opciono napomenu (pismeni/kontrolni/usmeni/aktivnost na času)
+\item Nastavnik pritiskom na dugme potvrđuje unos ocene
+\item Sistem validira unetu ocenu
+\item Sistem čuva unetu ocenu
+\item Sistem vraća poruku o uspešno unetoj oceni
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Nastavnik unosi pogrešne kredencijale - Ako u koraku (b) sistem utvrdi pogrešne kredencijale (nepostojeće korisničko ime ili pogrešna lozinka) obaveštava nastavnika obeležavanjem neispravnog polja. Nastavnik ispravlja neispravno polje. Proces se nastavlja iz koraka (a).
+\item Nastavnik unosi nevalidnu ocenu - Ako u koraku (h) sistem utvrdi nevalidnu ocenu (ocena nije od 1 do 5, prazno polje) obaveštava nastavnika. Nastavnik ispravlja ocenu. Proces se nastavlja iz koraka (f).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Kredencijali nastavnika su korisničko ime i šifra. \\
+
+
+\underline{\textbf{Slučaj upotrebe:} Nastavnik zaključuje ocenu učeniku} \\
+
+1. \textbf{Kratak opis:} Na osnovu ostvarenih ocena u toku školske godine nastavnik unosi zaključnu ocenu učenika u elektronski dnevnik. Sistem validira i čuva unetu ocenu i obaveštava nastavnika o uspešnom zaključivanju. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Nastavnik je registrovani korisnik sistema. Nastavnik ima pristup Internetu. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Zaključna ocena učenika uneta je u elektronski dnevnik. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik pristupa formi i unosi kredencijale 
+\item Sistem vrši autentifikaciju korisnika i odobrava pristup nastavniku
+\item Nastavnik pristupa listi učenika podeljenih po odeljenjima kojima predaje
+\item Nastavnik vrši pretragu i pritiska dugme za pristup ocenama kod odgovarajućeg učenika
+\item Sistem otvara stranicu sa ocenama odgovarajućeg učenika
+\item Nastavnik pritiska na dugme za otvaranje obrasca za zaključivanje ocene
+\item Sistem proverava uslove za zaključivanje
+\item Sistem prikazuje nastavniku obrazac za zaključivanje 
+\item Nastavnik unosi zaključnu ocenu u obrazac i opciono napomenu
+\item Nastavnik pritiskom na dugme potvrđuje zaključivanje ocene
+\item Sistem validira unetu zaključnu ocenu
+\item Sistem čuva unetu zaključnu ocenu
+\item Sistem vraća poruku o uspešno zaključenoj oceni
+\end{enumerate}
+
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Nastavnik unosi pogrešne kredencijale - Ako u koraku (b) sistem utvrdi pogrešne kredencijale (nepostojeće korisničko ime ili pogrešna lozinka) obaveštava nastavnika obeležavanjem neispravnog polja. Nastavnik ispravlja neispravno polje. Proces se nastavlja iz koraka (a).
+\item Nastavnik pokuša nedozvoljeno zaključivanje ocene - Ako u koraku (g) sistem utvrdi da nisu ispunjeni uslovi za zaključivanje ocene (učenik nema dovoljno ocena) obaveštava nastavnika da ocenu nije moguće zaključiti. Proces se završava.
+\item Nastavnik unosi nevalidnu ocenu - Ako u koraku (k) sistem utvrdi nevalidnu zaključnu ocenu (ocena nije od 1 do 5, prazno polje, ocena je manja od aritmetičke sredine ocena učenika) obaveštava nastavnika. Nastavnik ispravlja ocenu. Proces se nastavlja iz koraka (i).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Kredencijali nastavnika su korisničko ime i šifra. Minimalan broj ocena učenika da bi ocena mogla da se zaključi zavisi od fonda časova odgovarajućeg predmeta i definisan je pravilnikom škole.  \\
+
+
+\end{document}

@@ -1,0 +1,155 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{cmsrb}
+\usepackage[OT2,T1]{fontenc} 
+\usepackage[serbian]{babel}
+
+
+\title{Učenik - slučajevi upotrebe}
+
+
+\begin{document}
+
+\maketitle
+
+\underline{\textbf{Slučaj upotrebe:} Učenik pristupa ocenama} \\
+
+1. \textbf{Kratak opis:}  Učenik ima mogućnost pregleda ocene svih predmeta na koje je upisan.\\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Učenik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Učenik poseduje nalog na sistemu, učenik je upisan na predmet za koji traži pristup ocenama, sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Korisnik je pročitao potrebne informacije o ocenama.\\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Učenik pristupa sistemu pomoću sopstvenih kredencijala
+\item Sistem vrši autentifikaciju korisnika i odobrava pristup učeniku
+\item Otvara stranicu sa predmetima
+\item Ulazi u ocene željenog predmeta
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Učenik unosi pogrešne kredencijale nakon kojih ga sistem odbija.
+\item Učenik nema ocene za prikaz (primer: nije upisana ni jedna još uvek ili raspust u toku).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - Učenik je upisan na predmet i poseduje ocene iz istog predmeta\\
+
+9. \textbf{Dodatne informacije}: Kredencijali učenika su korisničko ime i šifra.\\
+
+\underline{\textbf{Slučaj upotrebe:} Učenik pristupa raspored časova
+} \\
+
+1. \textbf{Kratak opis:} Učenik pristupa rasporedu časova odelenja kom pripada. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Učenik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Učenik poseduje nalog na sistemu, učenik je član odelenja, odelenje ima dodeljen raspored časova, sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Učenik je pročitao potrebnu informaciju sa rasporeda časova. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Učenik pristupa sistemu pomoću sopstvenih kredencijala
+\item Sistem vrši autentifikaciju korisnika i odobrava pristup učeniku
+\item Učenik pristupa stranici na kojoj je prikazan raspored časova
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Učenik unosi pogrešne kredencijale nakon kojih ga sistem odbija.
+\item Učenik pristupa nepostojećem rasporedu časova, prikazuje mu se obaveštajna stranica da odelenju nije dodeljen raspored časova.
+
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Kredencijali učenika su korisničko ime i šifra. \\
+
+\underline{\textbf{Slučaj upotrebe:} Učenik pristupa kalendaru aktivnosti} \\
+
+1. \textbf{Kratak opis:} Učenik ima mogućnost pregleda kalendara aktivnosti.  \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Učenik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Postojanje kalendara aktivnosti na nivou sistema. \\
+
+4. \textbf{Postuslov:} Učenik je pregledao kalendar aktivnosti, opciono se prijavio za željenu aktivnost. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Učenik pristupa sistemu pomoću sopstvenih kredencijala
+\item Sistem vrši autentifikaciju korisnika i odobrava pristup učeniku.
+\item Učenik pristupa stranici sa kalendarom aktivnosti
+\item Učenik se prijavljuje na željenu aktivnost
+\item Sistem vraća poruku o uspešno unetoj prijavi
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Učenik unosi pogrešne kredencijale nakon kojih ga sistem odbija.
+\item Kalendar aktivnosti je prazan, učenik napušta stranicu
+\item Učenik pokušava da se prijavi na aktivnost na kojoj su slobodna mesta popunjena, sistem ga odbija - učenik dobija servisnu informaciju o odbijanju zbog popunjenih mesta
+
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: -  Željene aktivnosti učenika treba da imaju slobodna mesta kako bi učenik mogao uspešno da se prijavi\\
+
+9. \textbf{Dodatne informacije}: Kredencijali učenika su korisničko ime i šifra. \\
+
+
+\underline{\textbf{Slučaj upotrebe:} Učenik pristupa raspored redara} \\
+
+1. \textbf{Kratak opis:} Učenik ima mogućnost pregleda rasporeda redara odelenja kom pripada. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Učenik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Učenik poseduje nalog na sistemu, učenik je član odelenja, odelenje ima napravljen raspored redara, sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Učenik je pročitao u kojoj nedelji postaje redar. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Učenik pristupa sistemu pomoću sopstvenih kredencijala
+\item Sistem vrši autentifikaciju korisnika i odobrava pristup učeniku.
+\item Učenik pristupa stranici sa rasporedom redara
+\item Učenik čita potrebne informacije sa rasporeda
+\end{enumerate}
+
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Učenik unosi pogrešne kredencijale nakon kojih ga sistem odbija.
+\item Učenik pristupa nepostojećem rasporedu redara, prikazuje mu se obaveštajna stranica da odelenje nema napravljen raspored redara.
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Kredencijali učenika su korisničko ime i šifra  \\
+
+
+\end{document}

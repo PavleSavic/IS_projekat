@@ -1,0 +1,170 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{cmsrb}
+\usepackage[OT2,T1]{fontenc} 
+\usepackage[serbian]{babel}
+
+\title{Slučajevi upotrebe}
+
+\begin{document}
+
+\maketitle
+
+\section{Aktivnosti Nastavnika}
+
+\subsection{Slučaj upotrebe: Nastavnik evidentira održani čas} 
+1. \textbf{Kratak opis:} Nakon održanog časa nastavnik unosi informacije o nastavnoj temi pređenoj na tom času i upisuje odsutne učenike. Sistem validira i čuva unete podatke i obaveštava nastavnika o uspešno unetom izveštaju.\\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Nastavnik je registrovani korisnik sistema. Nastavnik ima pristup Internetu. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Izveštaj sa održanog časa je unet u arhivu dokumenata sistema. Odsutnim učenicima zabeležen je izostanak u bazi. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik pristupa listi održanih časova
+\item Nastavnik pritiska dugme za kreiranje novog izveštaja sa časa
+\item Sistem prikazuje formular za kreiranje novog izveštaja sa časa
+\item Nastavnik unosi tražene podatke 
+\item Nastavnik pritiskom na dugme potvrđuje unos
+\item Sistem vrši validaciju podataka
+\item Sistem čuva podatke
+\item Sistem vraća poruku o uspešno kreiranom izveštaju
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Nastavnik unosi nevalidne podatke u formular - Ako u koraku (f) sistem utvrdi neispravno polje formulara sistem obaveštava nastavnika obeležavanjem nevalidnog polja. Nastavnik ispravlja neispravno polje. Proces se nastavlja iz koraka (d).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Obavezna polja formulara jesu: datum, oznaka odeljenja, nastavna tema i spisak odsutnih učenika. Opciona polja su: literatura za temu, domaći zadatak i napomene. \\
+
+
+\subsection{Slučaj upotrebe: Nastavnik unosi dopunske i dodatne časove u raspored časova } 
+1. \textbf{Kratak opis:} U dogovoru sa zainteresovanim učenicima nastavnik dodaje dodatni ili dopunski čas u postojeći raspored časova. Sistem validira i čuva unete izmene i obaveštava nastavnika o uspešno ažuriranom rasporedu. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Nastavnik je registrovani korisnik sistema. Nastavnik ima pristup Internetu. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Dopunski ili dodatni čas dodat je u raspored časova. Baza je ažurirana. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik pristupa stranici na kojoj je prikazan raspored časova
+\item Nastavnik pritiska na dugme ispod odgovarajućeg dana  
+\item Sistem otvara formular za upis podataka o času koji se dodaje u raspored
+\item Nastavnik popunjava formular traženim podacima
+\item Nastavnik pritiskom na dugme potvrđuje slanje zahteva za unos časa u raspored
+\item Sistem validira unete podatke
+\item Sistem vrši proveru da li je došlo do preklapanja u rasporedu časova
+\item Sistem čuva podatke
+\item Sistem vraća poruku o uspešno ažuriranom rasporedu
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Nastavnik unosi nevalidne podatke u formular - Ako u koraku (f) sistem utvrdi nevalidne podatke (obavezna polja ostala nepopunjena) obaveštava nastavnika obeležavanjem neispravnog polja. Nastavnik ispravlja neispravno polje. Proces se nastavlja iz koraka (d).
+\item Neuspešna izmena rasporeda - Ako u koraku (g) sistem utvrdi preklapanje u rasporedu časova obaveštava nastavnika ispisivanjem časa koji se u rasporedu već nalazi u tom terminu. Nastavnik bira drugi dan i proces se nastavlja iz koraka (b).
+
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: Nastavnik dodatnu/dopunsku nastavu može zakazati samo u terminu 7. časa u prvoj smeni (predčas u drugoj smeni). \\
+
+9. \textbf{Dodatne informacije}: Obavezna polja formulara su: naziv predmeta, odeljenje, tip časa (dopunska/dodatna). Opciono polje je napomena. \\
+
+
+\subsection{Slučaj upotrebe: Nastavnik upisuje ocenu učeniku} 
+1. \textbf{Kratak opis:} Nakon održane provere znanja (pismene ili usmene) nastavnik unosi ostvarenu ocenu učenika u elektronski dnevnik. Sistem validira i čuva unetu ocenu i obaveštava nastavnika o uspešno unetoj oceni.  \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Nastavnik je registrovani korisnik sistema. Nastavnik ima pristup Internetu. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Ocena učenika uneta je u elektronski dnevnik. Baza je ažurirana.\\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik pristupa listi učenika podeljenih po odeljenjima kojima predaje
+\item Nastavnik vrši pretragu i pritiska dugme za pristup ocenama kod odgovarajućeg učenika
+\item Sistem otvara stranicu sa ocenama odgovarajućeg učenika
+\item Nastavnik pritiska na dugme za unos nove ocene
+\item Sistem prikazuje obrazac za unos nove ocene
+\item Nastavnik popunjava obrazac
+\item Nastavnik pritiskom na dugme potvrđuje unos ocene
+\item Sistem validira unete podatke
+\item Sistem čuva unetu ocenu
+\item Sistem vraća poruku o uspešno unetoj oceni
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Nastavnik unosi nevalidne podatke u obrazac - Ako u koraku (h) sistem utvrdi nevalidnu ocenu (ocena nije od 1 do 5) ili prazno obavezno polje obaveštava nastavnika obeležavanjem neispravnog polja. Nastavnik ispravlja neispravno polje. Proces se nastavlja iz koraka (f).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Obavezna polja obrasca su: ocena i tip ocene (kontrolni/pismeni/usmeni/aktivnost). Opciono polje je napomena. \\
+
+
+\subsection{Slučaj upotrebe: Nastavnik zaključuje ocenu učeniku} 
+1. \textbf{Kratak opis:} Na osnovu ostvarenih ocena u toku školske godine nastavnik unosi zaključnu ocenu učenika u elektronski dnevnik. Sistem validira i čuva unetu ocenu i obaveštava nastavnika o uspešnom zaključivanju ocene. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Nastavnik je registrovani korisnik sistema. Nastavnik ima pristup Internetu. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Zaključna ocena učenika uneta je u elektronski dnevnik. Baza je ažurirana. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Nastavnik pristupa listi učenika podeljenih po odeljenjima kojima predaje
+\item Nastavnik vrši pretragu i pritiska dugme za pristup ocenama kod odgovarajućeg učenika
+\item Sistem otvara stranicu sa ocenama odgovarajućeg učenika
+\item Nastavnik pritiska na dugme za otvaranje obrasca za zaključivanje ocene
+\item Sistem proverava uslove za zaključivanje
+\item Sistem prikazuje nastavniku obrazac za zaključivanje 
+\item Nastavnik popunjava obrazac
+\item Nastavnik pritiskom na dugme potvrđuje zaključivanje ocene
+\item Sistem validira unetu zaključnu ocenu
+\item Sistem čuva unetu zaključnu ocenu
+\item Sistem vraća poruku o uspešno zaključenoj oceni
+\end{enumerate}
+
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Nastavnik pokuša nedozvoljeno zaključivanje ocene - Ako u koraku (e) sistem utvrdi da nisu ispunjeni uslovi za zaključivanje ocene (učenik nema dovoljno ocena) obaveštava nastavnika da ocenu nije moguće zaključiti. Proces se završava.
+\item Nastavnik zaključuje nevalidnu ocenu - Ako u koraku (i) sistem utvrdi nevalidnu zaključnu ocenu (ocena nije od 1 do 5, prazno polje, ocena je manja od aritmetičke sredine ocena učenika) obaveštava nastavnika obeležavanjem neispravnog polja obrasca. Nastavnik ispravlja ocenu. Proces se nastavlja iz koraka (g).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: Ocenu moguće zaključiti samo u poslednjoj radnoj nedelji školske godine. \\
+
+9. \textbf{Dodatne informacije}: Minimalan broj ocena učenika da bi ocena mogla da se zaključi zavisi od fonda časova odgovarajućeg predmeta i definisan je pravilnikom škole. Obavezno polje obrasca je zaključna ocena. Opciono polje je napomena. \\
+
+
+\end{document}

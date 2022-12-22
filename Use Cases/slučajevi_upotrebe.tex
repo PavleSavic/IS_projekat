@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{enumitem}
 \usepackage{cmsrb}
+\usepackage{graphicx}
 \usepackage[OT2,T1]{fontenc} 
 \usepackage[serbian]{babel}
 
@@ -12,6 +13,15 @@
 \maketitle
 
 \section{Aktivnosti Nastavnika}
+
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.45]{nastavnik_use_case.png}
+    \end{center}
+\caption{Dijagram slučajeva upotrebe Nastavnika i Razrednog starešine kao njegove specijalizije}
+\end{figure}
+
+\newpage
 
 \subsection{Slučaj upotrebe: Nastavnik evidentira održani čas} 
 1. \textbf{Kratak opis:} Nakon održanog časa nastavnik unosi informacije o nastavnoj temi pređenoj na tom času i upisuje odsutne učenike. Sistem validira i čuva unete podatke i obaveštava nastavnika o uspešno unetom izveštaju.\\
@@ -244,7 +254,7 @@
 
 8. \textbf{Specijalni zahtevi}: U slučaju ukora odeljenskog veća prethodno je održana sednica na kojoj je disciplinska mere izglasana. \\
 
-9. \textbf{Dodatne informacije}: Obavezna polja obrasca jesu: datum, tip mere (opomena/ukor razrednog starešine/ukor odeljenskog veća), razlog izricanja mere. Opciono polje je napomena. Lakše disciplinske mere ne povlače smanjenje ocene iz vladanja. Odeljensko veće čine nastavnici koji izvode nastavu u određenom odeljenju. \\
+9. \textbf{Dodatne informacije}: Obavezna polja obrasca jesu: datum, nivo mere (opomena/ukor razrednog starešine/ukor odeljenskog veća), razlog izricanja mere. Opciono polje je napomena. Lakše disciplinske mere ne povlače smanjenje ocene iz vladanja. Odeljensko veće čine nastavnici koji izvode nastavu u određenom odeljenju. \\
 
 
 \end{document}

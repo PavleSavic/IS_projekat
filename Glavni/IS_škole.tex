@@ -61,7 +61,7 @@
     \begin{center}
         \includegraphics[scale=0.45]{imgs/nastavnik_use_case.png}
     \end{center}
-\caption{Dijagram slučajeva upotrebe Nastavnika i Razrednog starešine kao njegove specijalizije}
+\caption{Dijagram slučajeva upotrebe Nastavnika i Razrednog starešine kao njegove specijalizacije}
 \end{figure}
 
 \newpage
@@ -306,6 +306,151 @@
 8. \textbf{Specijalni zahtevi}: U slučaju ukora odeljenskog veća prethodno je održana sednica na kojoj je disciplinska mere izglasana. \\
 
 9. \textbf{Dodatne informacije}: Obavezna polja obrasca jesu: datum, nivo mere (opomena/ukor razrednog starešine/ukor odeljenskog veća), razlog izricanja mere. Opciono polje je napomena. Lakše disciplinske mere ne povlače smanjenje ocene iz vladanja. Odeljensko veće čine nastavnici koji izvode nastavu u određenom odeljenju. \\
+
+
+\subsection{Aktivnosti Učenika}
+
+\subsubsection{Slučaj upotrebe: Učenik pristupa svojim ocenama} 
+
+1. \textbf{Kratak opis:} Učenik pristupa svojim ocenama iz željenog predmeta. Učenik može filtrirati ocene po željenom kriterijumu. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Učenik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Učenik je registrovani korisnik sistema. Učenik je upisan na predmet. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Učenik je pristupio elektronskom dnevniku i pročitao potrebne informacije o ocenama.\\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Učenik pristupa stranici sa listom predmeta koje pohađa
+\item Učenik pritiska dugme za pristup ocenama iz željenog predmeta
+\item Sistem prikazuje sve ocene učenika iz tog predmeta u tekućoj školskoj godini
+\item Učenik pritiska na dugme za filtriranje ocena
+\item Sistem prikazuje učeniku polja za filtriranje
+\item Učenik unosi željeni kriterijum filtriranja
+\item Sistem filtrira ocene
+\item Sistem prikazuje ocene filtrirane po željenom kriterijumu
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Učenik nema ocene za prikaz - Ako u koraku (b) učenik želi da pristupi ocenama iz predmeta iz kojeg nije upisana nijedna ocena sistem ga obaveštava odgovarajućom porukom. Proces se nastavlja iz koraka (a).
+\item Nijedna ocena ne ispunjava kriterijum - Ako u koraku (g) sistem utvrdi da nijedna ocena ne ispunjava željeni kriterijum obaveštava učenika odgovarajućom porukom. Proces se nastavlja iz koraka (c).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Klikom na proizvoljnu ocenu učenik može videti tip ocene (kontrolni/pismeni/usmeni/aktivnost) i napomenu (ako je uneta). Kriterijum filtriranja su tip ocene i polugodište (prvo ili drugo). \\
+
+\subsubsection{Slučaj upotrebe: Učenik pristupa rasporedu časova} 
+
+1. \textbf{Kratak opis:} Učenik pristupa rasporedu časova odeljenja kom pripada u željenoj smeni. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Učenik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Učenik je registrovani korisnik sistema. Učenik je dodeljen odeljenju. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Učenik je pristupio rasporedu časova i pročitao potrebne informacije. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Učenik pristupa stranici na kojoj je prikazan raspored časova
+\item Sistem prikazuje učeniku padajući meni za izbor smene
+\item Učenik pritiskom na željenu opciju bira smenu
+\item Sistem obrađuje zahtev
+\item Sistem prikazuje učeniku raspored časova njegovog odeljenja u željenoj smeni 
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Raspored časova ne postoji - Ako u koraku (d) sistem utvrdi da odeljenju nije dodeljen raspored časova (za odabranu smenu) obaveštava učenika odgovarajućom porukom. Proces se nastavlja iz koraka (b).
+
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Prema pravilniku škole za svako odeljenje prepodnevna i poslepodnevna smena smenjuju se na nedeljnom nivou. \\
+
+\underline{\textbf{Slučaj upotrebe:} Učenik pristupa kalendaru aktivnosti} \\
+
+1. \textbf{Kratak opis:} Učenik ima mogućnost pregleda kalendara aktivnosti.  \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Učenik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Postojanje kalendara aktivnosti na nivou sistema. \\
+
+4. \textbf{Postuslov:} Učenik je pregledao kalendar aktivnosti, opciono se prijavio za željenu aktivnost. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Učenik pristupa sistemu pomoću sopstvenih kredencijala
+\item Sistem vrši autentifikaciju korisnika i odobrava pristup učeniku.
+\item Učenik pristupa stranici sa kalendarom aktivnosti
+\item Učenik se prijavljuje na željenu aktivnost
+\item Sistem vraća poruku o uspešno unetoj prijavi
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Učenik unosi pogrešne kredencijale nakon kojih ga sistem odbija.
+\item Kalendar aktivnosti je prazan, učenik napušta stranicu
+\item Učenik pokušava da se prijavi na aktivnost na kojoj su slobodna mesta popunjena, sistem ga odbija - učenik dobija servisnu informaciju o odbijanju zbog popunjenih mesta
+
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: -  Željene aktivnosti učenika treba da imaju slobodna mesta kako bi učenik mogao uspešno da se prijavi\\
+
+9. \textbf{Dodatne informacije}: Kredencijali učenika su korisničko ime i šifra. \\
+
+
+\underline{\textbf{Slučaj upotrebe:} Učenik pristupa raspored redara} \\
+
+1. \textbf{Kratak opis:} Učenik ima mogućnost pregleda rasporeda redara odelenja kom pripada. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Učenik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Učenik poseduje nalog na sistemu, učenik je član odelenja, odelenje ima napravljen raspored redara, sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Učenik je pročitao u kojoj nedelji postaje redar. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Učenik pristupa sistemu pomoću sopstvenih kredencijala
+\item Sistem vrši autentifikaciju korisnika i odobrava pristup učeniku.
+\item Učenik pristupa stranici sa rasporedom redara
+\item Učenik čita potrebne informacije sa rasporeda
+\end{enumerate}
+
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Učenik unosi pogrešne kredencijale nakon kojih ga sistem odbija.
+\item Učenik pristupa nepostojećem rasporedu redara, prikazuje mu se obaveštajna stranica da odelenje nema napravljen raspored redara.
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Kredencijali učenika su korisničko ime i šifra  \\
 
 
 \end{document}

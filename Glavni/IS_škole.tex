@@ -6,24 +6,66 @@
 \usepackage[OT2,T1]{fontenc} 
 \usepackage[serbian]{babel}
 
-\title{Slučajevi upotrebe}
 
 \begin{document}
 
-\maketitle
+\begin{titlepage}
+    \centering
 
-\section{Aktivnosti Nastavnika}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+    \center
+    \textup{\Large Univerzitet u Beogradu\\Matematički fakultet}\\[1.5cm]
+    \textup{\Large Projekat iz predmeta Informacioni sistemi 2022/2023.}\\[0.4cm]
+
+    \HRule \\[0.4cm]
+    { \huge \bfseries Informacioni sistem srednje škole}\\[0.4cm]
+    \HRule \\[1.1cm]
+    
+    \vspace{6 cm}
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \large
+			\emph{Autori:}\\
+			Pavle Savić\\
+			Jovan Marković\\
+			Mateja Trtica\\
+			Lazar Ristić\\		
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.5\textwidth}
+		\begin{flushright} \large
+			\emph{Predmet:}\\ 
+			Informacioni sistemi\\
+			\emph{Profesor:}\\ 
+			Saša Malkov\\
+			\emph{Asistent:}\\ 
+			Dara Milojković
+		\end{flushright}
+	\end{minipage}\\[2cm]
+	{\large \today}\\[2cm]
+\end{titlepage}
+
+\thispagestyle{empty}
+
+\newpage
+\renewcommand*\contentsname{Sadržaj:}
+\tableofcontents
+
+\newpage
+\section{Slučajevi upotrebe}
+
+\subsection{Aktivnosti Nastavnika}
 
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[scale=0.45]{nastavnik_use_case.png}
+        \includegraphics[scale=0.45]{imgs/nastavnik_use_case.png}
     \end{center}
 \caption{Dijagram slučajeva upotrebe Nastavnika i Razrednog starešine kao njegove specijalizije}
 \end{figure}
 
 \newpage
-
-\subsection{Slučaj upotrebe: Nastavnik evidentira održani čas} 
+\subsubsection{Slučaj upotrebe: Nastavnik evidentira održani čas} 
 1. \textbf{Kratak opis:} Nakon održanog časa nastavnik unosi informacije o nastavnoj temi pređenoj na tom času i upisuje odsutne učenike. Sistem validira i čuva unete podatke i obaveštava nastavnika o uspešno unetom izveštaju.\\
 
 2. \textbf{Učesnici:}
@@ -59,7 +101,7 @@
 9. \textbf{Dodatne informacije}: Obavezna polja formulara jesu: datum, oznaka odeljenja, nastavna tema i spisak odsutnih učenika. Opciona polja su: literatura za temu, domaći zadatak i napomene. \\
 
 
-\subsection{Slučaj upotrebe: Nastavnik unosi dopunske i dodatne časove u raspored časova } 
+\subsubsection{Slučaj upotrebe: Nastavnik unosi dopunske i dodatne časove u raspored časova } 
 1. \textbf{Kratak opis:} U dogovoru sa zainteresovanim učenicima nastavnik dodaje dodatni ili dopunski čas u postojeći raspored časova. Sistem validira i čuva unete izmene i obaveštava nastavnika o uspešno ažuriranom rasporedu. \\
 
 2. \textbf{Učesnici:}
@@ -98,7 +140,7 @@
 9. \textbf{Dodatne informacije}: Obavezna polja formulara su: naziv predmeta, odeljenje, tip časa (dopunska/dodatna). Opciono polje je napomena. \\
 
 
-\subsection{Slučaj upotrebe: Nastavnik upisuje ocenu učeniku} 
+\subsubsection{Slučaj upotrebe: Nastavnik upisuje ocenu učeniku} 
 1. \textbf{Kratak opis:} Nakon održane provere znanja (pismene ili usmene) nastavnik unosi ostvarenu ocenu učenika u elektronski dnevnik. Sistem validira i čuva unetu ocenu i obaveštava nastavnika o uspešno unetoj oceni.  \\
 
 2. \textbf{Učesnici:}
@@ -136,7 +178,7 @@
 9. \textbf{Dodatne informacije}: Obavezna polja obrasca su: ocena i tip ocene (kontrolni/pismeni/usmeni/aktivnost). Opciono polje je napomena. \\
 
 
-\subsection{Slučaj upotrebe: Nastavnik zaključuje ocenu učeniku} 
+\subsubsection{Slučaj upotrebe: Nastavnik zaključuje ocenu učeniku} 
 1. \textbf{Kratak opis:} Na osnovu ostvarenih ocena u toku školske godine nastavnik unosi zaključnu ocenu učenika u elektronski dnevnik. Sistem validira i čuva unetu ocenu i obaveštava nastavnika o uspešnom zaključivanju ocene. \\
 
 2. \textbf{Učesnici:}
@@ -177,9 +219,9 @@
 9. \textbf{Dodatne informacije}: Minimalan broj ocena učenika da bi ocena mogla da se zaključi zavisi od fonda časova odgovarajućeg predmeta i definisan je pravilnikom škole. Obavezno polje obrasca je zaključna ocena. Opciono polje je napomena. \\
 
 
-\section{Aktivnosti Razrednog starešine}
+\subsection{Aktivnosti Razrednog starešine}
 
-\subsection{Slučaj upotrebe: Razredni starešina opravdava učeniku evidentirani izostanak}
+\subsubsection{Slučaj upotrebe: Razredni starešina opravdava učeniku evidentirani izostanak}
 1. \textbf{Kratak opis:} Na osnovu opravdanja koje je učenik dostavio uživo ili elektronski skenirano kroz sistem razredni starešina evidentira izostanak kao opravdan. Sistem čuva promenu statusa odgovarajućeg izostanka i o tome obaveštava razrednog starešinu. \\
 
 2. \textbf{Učesnici:}
@@ -218,7 +260,7 @@
 9. \textbf{Dodatne informacije}: - \\
 
 
-\subsection{Slučaj upotrebe: Razredni starešina izriče učeniku lakšu disciplinsku meru}
+\subsubsection{Slučaj upotrebe: Razredni starešina izriče učeniku lakšu disciplinsku meru}
 
 1. \textbf{Kratak opis:} Na osnovu donesene odluke razredni starešina unosi u elektronski dnevnik lakšu disciplinsku meru izrečenu učeniku. Sistem validira i čuva unete podatke i o tome obaveštava razrednog starešinu. \\
 

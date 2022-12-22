@@ -23,7 +23,7 @@
 
 3. \textbf{Preduslov:} Nastavnik je registrovani korisnik sistema. Nastavnik ima pristup Internetu. Sistem je u funkciji. \\
 
-4. \textbf{Postuslov:} Izveštaj sa održanog časa je unet u arhivu dokumenata sistema. Odsutnim učenicima zabeležen je izostanak u bazi. \\
+4. \textbf{Postuslov:} Izveštaj sa održanog časa je unet u arhivu dokumenata sistema. Odsutnim učenicima zabeležen je izostanak. Baza je ažurirana. \\
 
 5. \textbf{Osnovni tok:} 
 \begin{enumerate} [label=(\alph*)]
@@ -165,6 +165,86 @@
 8. \textbf{Specijalni zahtevi}: Ocenu moguće zaključiti samo u poslednjoj radnoj nedelji školske godine. \\
 
 9. \textbf{Dodatne informacije}: Minimalan broj ocena učenika da bi ocena mogla da se zaključi zavisi od fonda časova odgovarajućeg predmeta i definisan je pravilnikom škole. Obavezno polje obrasca je zaključna ocena. Opciono polje je napomena. \\
+
+
+\section{Aktivnosti Razrednog starešine}
+
+\subsection{Slučaj upotrebe: Razredni starešina opravdava učeniku evidentirani izostanak}
+1. \textbf{Kratak opis:} Na osnovu opravdanja koje je učenik dostavio uživo ili elektronski skenirano kroz sistem razredni starešina evidentira izostanak kao opravdan. Sistem čuva promenu statusa odgovarajućeg izostanka i o tome obaveštava razrednog starešinu. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Razredni starešina
+\item Učenik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Razredni starešina je registrovani korisnik sistema. Razredni starešina ima pristup Internetu. Sistem je u funkciji. Učenik je dostavio opravdanje. \\
+
+4. \textbf{Postuslov:} Sistem je evidentirao izostanak učenika kao opravdan. Baza je ažurirana. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Razredni starešina pristupa stranici sa listom učenika u svom odeljenju
+\item Razredni starešina pritiska na dugme za pristup korisničkom profilu odgovarajućeg učenika
+\item Sistem otvara profil učenika
+\item Razredni starešina pritiska na dugme za izlistavanje izostanaka učenika
+\item Sistem prikazuje listu izostanaka i status svakog izostanka (opravdan/neopravdan)
+\item Razredni starešina pritiska odgovarajući neopravdani izostanak
+\item Sistem prikazuje dialog box (da/ne) i pita razrednog starešinu da li želi da promeni status neopravdanog izostanka
+\item Razredni starešina potvrđuje promenu
+\item Sistem čuva promenu statusa izostanka
+\item Sistem obaveštava razrednog starešinu o uspešnoj promeni statusa izostanka
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Razredni starešina ne potvrđuje promenu statusa izostanka - Ako u koraku (h) razredni starešina odgovori odrično ili ugasi dialog box sistem ne evidentira promenu statusa. Proces se nastavlja iz koraka (e). 
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: Izostanak se mora opravdati u roku od dve nedelje nakon evidentiranja. Nakon isteka roka razredni starešina više nema mogućnost opravdavanja i status izostanka ostaje - neopravdan. \\
+
+9. \textbf{Dodatne informacije}: - \\
+
+
+\subsection{Slučaj upotrebe: Razredni starešina izriče učeniku lakšu disciplinsku meru}
+
+1. \textbf{Kratak opis:} Na osnovu donesene odluke razredni starešina unosi u elektronski dnevnik lakšu disciplinsku meru izrečenu učeniku. Sistem validira i čuva unete podatke i o tome obaveštava razrednog starešinu. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Razredni starešina
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Razredni starešina je registrovani korisnik sistema. Razredni starešina ima pristup Internetu. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Dokument o izrečenoj meri je unet u arhivu dokumenata sistema. Disciplinska mera učenika evidentirana je u elektronskom dnevniku. Baza je ažurirana. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Razredni starešina pristupa stranici sa listom učenika u svom odeljenju
+\item Razredni starešina pritiska na dugme za pristup korisničkom profilu odgovarajućeg učenika
+\item Sistem otvara profil učenika
+\item Razredni starešina pritiska dugme za kreiranje dokumenta o disciplinskoj meri
+\item Sistem prikazuje obrazac za kreiranje dokumenta o disciplinskoj meri 
+\item Razredni starešina unosi tražene podatke
+\item Razredni starešina pritiskom na dugme potvrđuje unos
+\item Sistem vrši validaciju podataka
+\item Sistem čuva podatke
+\item Sistem obaveštava razrednog starešinu o uspešno izrečenoj disciplinskoj meri
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Razredni starešina unosi nevalidne podatke u obrazac - Ako u koraku (h) sistem utvrdi nevalidno polje obrasca (prazno obavezno polje) sistem obaveštava razrednog starešinu obeležavanjem neispravnog polja. Razredni starešina ispravlja neispravno polje. Proces se nastavlja iz koraka (f).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: U slučaju ukora odeljenskog veća prethodno je održana sednica na kojoj je disciplinska mere izglasana. \\
+
+9. \textbf{Dodatne informacije}: Obavezna polja obrasca jesu: datum, tip mere (opomena/ukor razrednog starešine/ukor odeljenskog veća), razlog izricanja mere. Opciono polje je napomena. Lakše disciplinske mere ne povlače smanjenje ocene iz vladanja. Odeljensko veće čine nastavnici koji izvode nastavu u određenom odeljenju. \\
 
 
 \end{document}

@@ -88,7 +88,7 @@ TODO: dijagram nivoa 0
 
 \newpage
 \subsubsection{Slučaj upotrebe: Učenik pristupa svojim ocenama} 
-1. \textbf{Kratak opis:} Učenik pristupa svojim ocenama iz željenog predmeta. Učenik može filtrirati ocene po željenom kriterijumu. \\
+1. \textbf{Kratak opis:} Učenik pristupa svojim ocenama iz željenog predmeta. Učenik filtrira ocene po željenom kriterijumu. \\
 
 2. \textbf{Učesnici:}
 \begin{enumerate} [label=(\alph*)]
@@ -138,16 +138,17 @@ TODO: dijagram nivoa 0
 
 5. \textbf{Osnovni tok:} 
 \begin{enumerate} [label=(\alph*)]
-\item Učenik pristupa stranici na kojoj je prikazan raspored časova
-\item Sistem prikazuje učeniku padajući meni za izbor smene
-\item Učenik pritiskom na željenu opciju bira smenu
+\item Učenik pristupa početnoj stranici rasporeda časova
+\item Sistem prikazuje učeniku padajući meni za izbor odeljenja i smene
+\item Učenik pritiskom na željene opcije bira odeljenje i smenu
+\item Učenik pritiskom na dugme potvrđuje unos 
 \item Sistem obrađuje zahtev
 \item Sistem prikazuje učeniku raspored časova njegovog odeljenja u željenoj smeni 
 \end{enumerate}
 
 6. \textbf{Alternativni tokovi:}
 \begin{enumerate} [label=(\roman*)]
-\item Raspored časova ne postoji - Ako u koraku (d) sistem utvrdi da odeljenju nije dodeljen raspored časova (za odabranu smenu) obaveštava učenika odgovarajućom porukom. Proces se nastavlja iz koraka (b).
+\item Raspored časova ne postoji - Ako u koraku (e) sistem utvrdi da odeljenju nije dodeljen raspored časova (za odabranu smenu) obaveštava učenika odgovarajućom porukom. Proces se nastavlja iz koraka (b).
 
 \end{enumerate}
 
@@ -159,7 +160,7 @@ TODO: dijagram nivoa 0
 
 
 \subsubsection{Slučaj upotrebe: Učenik pristupa rasporedu redara} 
-1. \textbf{Kratak opis:} Učenik pristupa rasporedu redara odeljenja kom pripada. \\ 
+1. \textbf{Kratak opis:} Učenik pristupa rasporedu redara odeljenja kom pripada za željenu nedelju. \\ 
 
 2. \textbf{Učesnici:}
 \begin{enumerate} [label=(\alph*)]
@@ -172,15 +173,15 @@ TODO: dijagram nivoa 0
 
 5. \textbf{Osnovni tok:} 
 \begin{enumerate} [label=(\alph*)]
-\item Učenik pristupa stranici sa rasporedom redara svog odeljenja
-\item Učenik se pritiskom na dugme ("Levo"/"Desno") kreće do rasporeda redara za traženu nedelju
+\item Učenik pristupa početnoj stranici sa rasporedom redara svog odeljenja
+\item Učenik se pritiskom na dugme (``Levo''/``Desno'') kreće do rasporeda redara za traženu nedelju
 \item Sistem prikazuje raspored redara za traženu nedelju
 \end{enumerate}
 
 
 6. \textbf{Alternativni tokovi:}
 \begin{enumerate} [label=(\roman*)]
-\item Raspored redara za traženu nedelju ne postoji - Ako u koraku (c) sistem utvrdi da raspored redara za traženu nedelju nije određen, obaveštava učenika odgovarajućom porukom. Proces se nastavlja iz koraka (a).
+\item Raspored redara za traženu nedelju ne postoji - Ako u koraku (c) sistem utvrdi da raspored redara za traženu nedelju nije određen, obaveštava učenika odgovarajućom porukom. Proces se nastavlja iz koraka (b).
 \end{enumerate}
 
 7. \textbf{Podtokovi}: - \\
@@ -190,7 +191,7 @@ TODO: dijagram nivoa 0
 9. \textbf{Dodatne informacije}:  U toku nedelje dužnost redara u odeljenju obavlja dvoje učenika tog odeljenja. \\
 
 
-\subsubsection{Slučaj upotrebe: Učenik se prijavljuje za vannastavnu aktivnost} 
+\subsubsection{Slučaj upotrebe: Učenik se prijavljuje na vannastavnu aktivnost} 
 1. \textbf{Kratak opis:} Učenik odabira željenu vannastavnu aktivnost. Sistem proverava raspoloživost, čuva promenu i o tome obaveštava učenika. \\
 
 2. \textbf{Učesnici:}
@@ -198,13 +199,13 @@ TODO: dijagram nivoa 0
 \item Učenik
 \end{enumerate} 
 
-3. \textbf{Preduslov:} Učenik je registrovani korisnik sistema. Učenik ima pristup Internetu. Sistem je u funkciji. Kalendar aktivnosti je kreiran. \\
+3. \textbf{Preduslov:} Učenik je registrovani korisnik sistema. Učenik ima pristup Internetu. Sistem je u funkciji. Raspored vannastavnih aktivnosti je kreiran. \\
 
 4. \textbf{Postuslov:} Sistem je evidentirao prijavu učenika na vannastavnu aktivnost. Baza je ažurirana. \\
 
 5. \textbf{Osnovni tok:} 
 \begin{enumerate} [label=(\alph*)]
-\item Učenik pristupa stranici sa kalendarom aktivnosti
+\item Učenik pristupa stranici sa rasporedom vannastavnih aktivnosti
 \item Učenik pritiska na željenu aktivnost
 \item Sistem prikazuje kratak opis odabrane aktivnosti
 \item Učenik pritiska dugme za prijavu na željenu aktivnost
@@ -218,7 +219,8 @@ TODO: dijagram nivoa 0
 6. \textbf{Alternativni tokovi:}
 \begin{enumerate} [label=(\roman*)]
 \item Učenik ne potvrđuje prijavu - Ako u koraku (f) učenik odgovori odrično ili ugasi dialog box sistem ne evidentira prijavu. Proces se nastavlja iz koraka (c). 
-\item Neuspešna prijava na aktivnost - Ako u koraku (h) sistem utvrdi da učenik pokušava da se prijavi na aktivnost na kojoj su sva mesta popunjena, sistem odbija prijavu i o tome obaveštava učenika. Proces se nastavlja iz koraka (a).
+\item Sva mesta na izabranoj aktivnosti popunjena - Ako u koraku (g) sistem utvrdi da učenik pokušava da se prijavi na aktivnost na kojoj su sva mesta popunjena, sistem o tome obaveštava učenika i odbija prijavu. Proces se nastavlja iz koraka (a).
+\item Učenik se prijavljuje na već prijavljenu aktivnost - Ako u koraku (g) sistem utvrdi da učenik pokušava ponovno da se prijavi na aktivnost na koju je već prijavljen, sistem o tome obaveštava učenika i odbija prijavu. Proces se nastavlja iz koraka (a).
 
 \end{enumerate}
 
@@ -228,7 +230,7 @@ TODO: dijagram nivoa 0
 
 9. \textbf{Dodatne informacije}: Škola nudi vannastavne aktivnosti kao što su: sportske sekcije, glumačka sekcija, muzička sekcija, besedništvo. Broj raspoloživih mesta specifičan je za svaku sekciju. \\
 
-
+\newpage
 \subsection{Aktivnosti Nastavnika}
 
 \begin{figure} [!ht]
@@ -392,19 +394,10 @@ TODO: dijagram nivoa 0
 
 9. \textbf{Dodatne informacije}: Minimalan broj ocena učenika da bi ocena mogla da se zaključi zavisi od fonda časova odgovarajućeg predmeta i definisan je pravilnikom škole. Obavezno polje obrasca je zaključna ocena. Opciono polje je napomena. \\
 
-
+\newpage
 \subsection{Aktivnosti Razrednog starešine}
 
 \subsubsection{Slučaj upotrebe: Razredni starešina opravdava učeniku evidentirani izostanak}
-
-\begin{figure} [!ht]
-    \begin{center}
-        \includegraphics[scale=0.25]{imgs/BPMN_opravdavanje_casova.png}
-    \end{center}
-\caption{BPMN dijagram saradnje Opravdavanje izostanka učeniku}
-\end{figure}
-
-\newpage
 1. \textbf{Kratak opis:} Na osnovu opravdanja koje je učenik dostavio uživo ili elektronski skenirano kroz sistem razredni starešina evidentira izostanak kao opravdan. Sistem čuva promenu statusa odgovarajućeg izostanka i o tome obaveštava razrednog starešinu. \\
 
 2. \textbf{Učesnici:}
@@ -442,10 +435,15 @@ TODO: dijagram nivoa 0
 
 9. \textbf{Dodatne informacije}: - \\
 
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.35]{imgs/BPMN_opravdavanje_casova.png}
+    \end{center}
+\caption{BPMN dijagram saradnje Opravdavanje izostanka učeniku}
+\end{figure}
 
 \subsubsection{Slučaj upotrebe: Razredni starešina izriče učeniku lakšu disciplinsku meru}
-
-1. \textbf{Kratak opis:} Na osnovu donesene odluke razredni starešina unosi u elektronski dnevnik lakšu disciplinsku meru izrečenu učeniku. Sistem validira i čuva unete podatke i o tome obaveštava razrednog starešinu. \\
+1. \textbf{Kratak opis:} Na osnovu donesene odluke razredni starešina unosi u sistem lakšu disciplinsku meru izrečenu učeniku. Sistem validira i čuva unete podatke i o tome obaveštava razrednog starešinu. \\
 
 2. \textbf{Učesnici:}
 \begin{enumerate} [label=(\alph*)]
@@ -454,7 +452,7 @@ TODO: dijagram nivoa 0
 
 3. \textbf{Preduslov:} Razredni starešina je registrovani korisnik sistema. Razredni starešina ima pristup Internetu. Sistem je u funkciji. \\
 
-4. \textbf{Postuslov:} Dokument o izrečenoj meri je unet u arhivu dokumenata sistema. Disciplinska mera učenika evidentirana je u elektronskom dnevniku. Baza je ažurirana. \\
+4. \textbf{Postuslov:} Dokument o izrečenoj meri je unet u arhivu dokumenata sistema. Disciplinska mera učenika evidentirana je u sistemu. Baza je ažurirana. \\
 
 5. \textbf{Osnovni tok:} 
 \begin{enumerate} [label=(\alph*)]
@@ -481,15 +479,22 @@ TODO: dijagram nivoa 0
 
 9. \textbf{Dodatne informacije}: Obavezna polja obrasca jesu: datum, nivo mere (opomena/ukor razrednog starešine/ukor odeljenskog veća), razlog izricanja mere. Opciono polje je napomena. Lakše disciplinske mere ne povlače smanjenje ocene iz vladanja. Odeljensko veće čine nastavnici koji izvode nastavu u određenom odeljenju. \\
 
-
+\newpage
 \subsection{Aktivnosti Direktora}
 
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.6]{imgs/direktor_use_case.png}
+    \end{center}
+\caption{Dijagram slučajeva upotrebe Direktora}
+\end{figure}
 
-\subsubsection{Slučaj upotrebe: Direktor pristupa kalendaru aktivnosti}
+\newpage
+\subsubsection{Slučaj upotrebe: Direktor ažurira kalendar aktivnosti}
 1. \textbf{Kratak opis:} Sistem direktoru prikazuje kalendar aktivnosti. Direktor može praviti izmene u kalendaru.\\
 
 2. \textbf{Učesnici:}
-\begin{enumerate} 
+\begin{enumerate} [label=(\alph*)]
 \item Direktor
 \end{enumerate} 
 
@@ -498,20 +503,20 @@ TODO: dijagram nivoa 0
 4. \textbf{Postuslov:}  Kalendar aktivnosti je ažuriran novim informacijama.\\
 
 5. \textbf{Osnovni tok:} 
-\begin{enumerate} 
+\begin{enumerate} [label=(\alph*)]
 \item Direktor klikće na dugme " Prikaži kalendar aktivnosti" 
 \item Sistem prikazuje direktoru kalendar aktivnosti
 \item Direktor klikom na dugme "Izmeni kalendar aktivnosi" pralazi na podtok slučaja upotrebe (1) 
 \end{enumerate}
 
 6. \textbf{Alternativni tokovi:}
-\begin{enumerate} 
+\begin{enumerate} [label=(\roman*)]
 \item Nedovoljan broj radnih dana - Ukoliko u koraku (6) u podtoku (1) nakon izmene broj radnih dana ne ispunjava zakonski minimum,  Sistem šalje obaveštenje direktoru i onemogućava se klik na dugme "Završi" i prelazi se na korak (1).
 \end{enumerate}
 
 7. \textbf{Podtokovi}:  \\
 Podtok 1:
-\begin{enumerate}
+\begin{enumerate} [label=(\alph*)]
 \item Sistem direktoru prikazuje novi formular sa opcijama " {Dodaj nastavni dan} ", " {Dodaj vannastavnu aktivnost} " i "{ Dodaj} nenastavni dan"
 \item Direktor klikće na odgovarajuće dugme
 \item Sistem prikazuje direktoru formu u kojoj određuje datumski interval važenja izmene
@@ -527,11 +532,11 @@ Podtok 1:
 9. \textbf{Dodatne informacije}: - \\
 
 
-\subsubsection{Slučaj upotrebe: Direktor pristupa dnevnicima} 
+\subsubsection{Slučaj upotrebe: Direktor ažurira dnevnike} 
 1. \textbf{Kratak opis:}  Sistem prikazuje direktoru sve dnevnike. Direktor može vršiti izmene u dnevnicima. \\
 
 2. \textbf{Učesnici:}
-\begin{enumerate} 
+\begin{enumerate} [label=(\alph*)]
 \item Direktor
 \end{enumerate} 
 
@@ -540,7 +545,7 @@ Podtok 1:
 4. \textbf{Postuslov:}  Dnevnici su ažurirani ukoliko su izvršene izmene.\\
 
 5. \textbf{Osnovni tok:} 
-\begin{enumerate} 
+\begin{enumerate} [label=(\alph*)]
 \item Direktor klikće na dugme " {Pogledaj dnevnike}" 
 \item Sistem prikazuje sve postojeće dnevnike
 \item Direktor odabira dnevnik željenog odeljenja
@@ -555,14 +560,14 @@ Podtok 1:
 \end{enumerate}
 
 6. \textbf{Alternativni tokovi:}
-\begin{enumerate} 
+\begin{enumerate} [label=(\roman*)]
 \item Učenik već postoji u sistemu - Ako sistem u koraku (4) utvrdi da učenik sa postojećim informacijama već postoji u sistemu, sistem ispisuje odgovarajuću poruku i vraća korisnika na korak (2) 
 \item Dodeljeno odeljenje ne postoji - Ako sistem u koraku (9) utvrdi da dodeljeno odeljenje ne postoji, prikazuje odgovarajuću poruku i vraća korisnika na korak (8).
 \end{enumerate}
 
 7. \textbf{Podtokovi}:  \\
 1: \\
-\begin{enumerate}
+\begin{enumerate} [label=(\alph*)]
 \item Sistem prikazuje korisniku spisak učenika u odeljenju
 \item Korisnik klikće na učenika
 \item Sistem prikazuje sve ocene željenog učenika
@@ -572,7 +577,7 @@ Podtok 1:
 \item Sistem vraća korisnika na korak (4) iz osnovnog toka
 \end{enumerate}
 2: \\
-\begin{enumerate}
+\begin{enumerate} [label=(\alph*)]
 \item Sistem prikazuje korisniku spisak nastavnika
 \item Korisnik klikće na nastavnika
 \item Korisnik klikće na  " {Završi} sa izmenama"
@@ -580,7 +585,7 @@ Podtok 1:
 \item Sistem vraća korisnika na korak (4) iz osnovnog toka
 \end{enumerate}
 3: \\
-\begin{enumerate}
+\begin{enumerate} [label=(\alph*)]
 \item Sistem prikazuje korisniku spisak učenika u odeljenju
 \item Korisnik klikće na učenika
 \item Sistem prikazuje sve izostanke željenog učenika
@@ -590,7 +595,7 @@ Podtok 1:
 \item Sistem vraća korisnika na korak (4) iz osnovnog toka
 \end{enumerate}
 4: \\
-\begin{enumerate}
+\begin{enumerate} [label=(\alph*)]
 \item Sistem prikazuje korisniku spisak nastavnika koji predaju datom odeljenju
 \item Korisnik klikće na nastavnika koji predaje tom odeljenju
 \item Sistem prikazuje korisniku spisak nastavnika zaposlenih u školi
@@ -608,36 +613,89 @@ Podtok 1:
 9. \textbf{Dodatne informacije}: - \\
 
 
-\subsubsection{Slučaj upotrebe: Direktor pristupa pregledu finansija}
-1. \textbf{Kratak opis:}  Direktor ima uvid u finansijske dobitke i izdatke škole. \\
+\subsubsection{Slučaj upotrebe: Direktor pravi finansijski izveštaj škole}
+1. \textbf{Kratak opis:}  Direktor na osnovu finansijskih prihoda i rashoda pravi finansijski izveštaj škole. Sistem validira i čuva unete podatke i obaveštava direktora o uspešno unetom izveštaju. \\
 
 2. \textbf{Učesnici:}
-\begin{enumerate} 
+\begin{enumerate} [label=(\alph*)]
 \item Direktor
 \end{enumerate} 
 
 3. \textbf{Preduslov:} Direktor je registrovani korisnik sistema. Direktor ima pristup Internetu. Sistem je u funkciji. \\
 
-4. \textbf{Postuslov:}  - \\
+4. \textbf{Postuslov:} Finansijski izveštaj unet je u arhivu dokumenata sistema. \\
 
 5. \textbf{Osnovni tok:} 
-\begin{enumerate} 
-\item Direktor klikće na dugme " {Pogledaj finansije} " 
-\item Sistem prikazuje tabelu svih finansijskih transakcija
-\item Direktor klikće na dugme "{Nova transakcija}"
-\item Sistem prikazuje formu za unošenje informacija o finansijskim transakcijama
+\begin{enumerate} [label=(\alph*)]
+\item Direktor pristupa stranici sa finansijskim izveštajima
+\item Direktor pritiska dugme za kreiranje novog izveštaja
+\item Sistem kreira prazan finansijski izveštaj
+\item Direktor pritiska dugme za dodavanje nove transakcije u izveštaj
+\item Sistem prikazuje formular za unošenje informacija o novoj transakciji
 \item Direktor unosi informacije o transakciji
+\item Direktor pritiskom na dugme potvrđuje unos
+\item Sistem vrši validaciju podataka
 \item Sistem upisuje datu transakciju
-\item Sistem prikazuje ažuriranu zabelu svih transakcija
+\item Sistem prikazuje ažuriran finansijski izveštaj \footnote{Koraci (d), (e), (f), (g), (h), (i), (j) ponavljaju se sve dok ima transakcija koje je potrebno zavesti u izveštaj}
+\item Direktor pritiska dugme za zaključivanje izveštaja
+\item Sistem čuva podatke
+\item Sistem vraća poruku o uspešno kreiranom izveštaju
+
 \end{enumerate}
 
-6. \textbf{Alternativni tokovi:} -\\
+6. \textbf{Alternativni tokovi:} 
+\begin{enumerate} [label=(\roman*)]
+\item Direktor unosi nevalidne podatke u formular - Ako u koraku (h) sistem utvrdi neispravno polje formulara sistem obaveštava nastavnika obeležavanjem nevalidnog polja. Direktor ispravlja neispravno polje. Proces se nastavlja iz koraka (f).
+\end{enumerate}
 
 7. \textbf{Podtokovi}:  - \\
 
 8. \textbf{Specijalni zahtevi}: - \\
 
-9. \textbf{Dodatne informacije}: - Ovaj slučaj upotrebe služi samo za upisivanje informacija o transakcijama i njihovom prikazivanju, ne i za obavljanje transakcija. \\
+9. \textbf{Dodatne informacije}: Obavezna polja formulara jesu: datum, tip transakcije (priliv/odliv), iznos. Opciono polje je napomena. Ovaj slučaj upotrebe služi samo za dokumentovanje transakcija, ne i za njihovo obavljanje. Finansijski izveštaj pravi se na mesečnom nivou.  \\
+
+
+\subsubsection{Slučaj upotrebe: Direktor izriče učeniku težu disciplinsku meru}
+1. \textbf{Kratak opis:} Na osnovu donesene odluke direktor unosi u sistem težu disciplinsku meru izrečenu učeniku. Sistem validira i čuva unete podatke i o tome obaveštava direktora. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Direktor
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Direktor je registrovani korisnik sistema. Direktor ima pristup Internetu. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Dokument o izrečenoj meri je unet u arhivu dokumenata sistema. Disciplinska mera učenika evidentirana je u sistemu. Baza je ažurirana. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Direktor pristupa stranici sa listom svih učenika podeljenih po razredima i odeljenjima 
+\item Direktor pritiska na dugme za pristup korisničkom profilu odgovarajućeg učenika
+\item Sistem otvara profil učenika
+\item Direktor pritiska dugme za kreiranje dokumenta o disciplinskoj meri
+\item Sistem prikazuje obrazac za kreiranje dokumenta o disciplinskoj meri 
+\item Direktor unosi tražene podatke
+\item Direktor pritiskom na dugme potvrđuje unos
+\item Sistem vrši validaciju podataka
+\item Sistem čuva podatke
+\item Sistem obaveštava direktora o uspešno izrečenoj disciplinskoj meri
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Direktor unosi nevalidne podatke u obrazac - Ako u koraku (h) sistem utvrdi nevalidno polje obrasca (prazno obavezno polje) sistem obaveštava direktora obeležavanjem neispravnog polja. Direktor ispravlja neispravno polje. Proces se nastavlja iz koraka (f).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: Roditelj ili staratelj upoznat je sa disciplinskim postupkom koji se vodi protiv učenika. U slučaju ukora nastavničkog veća ili isključenja iz škole prethodno je održana sednica nastavičkog veća na kojoj je disciplinska mere izglasana. \\
+
+9. \textbf{Dodatne informacije}: Obavezna polja obrasca jesu: datum, nivo mere (ukor direktora/ukor nastavničkog veća/isključenje učenika iz škole), razlog izricanja mere. Opciono polje je napomena. Lakše disciplinske mere povlače smanjenje ocene iz vladanja (ukor direktora na 4 ili 3, ukor nastavničkog veća na 2, isklučenje iz škola na 1). Nastavničko veće čine svi nastavnici zaposleni u školi. \\
+
+
+\newpage
+\subsection{Aktivnosti Administratora}
+
 
 
 

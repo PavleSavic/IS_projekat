@@ -52,6 +52,27 @@
 \renewcommand*\contentsname{Sadržaj:}
 \tableofcontents
 
+
+\newpage
+\section{Analiza sistema}
+
+\subsection{Uvod i osnovna ideja}
+\subsection{Korisnici sistema}
+\subsection{Kratak opis}
+
+
+\newpage
+\section{Dijagrami toka podataka}
+
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.5]{imgs/dijagram_konteksta.png}
+    \end{center}
+\caption{Dijagram konteksta sistema}
+\end{figure}
+
+TODO: dijagram nivoa 0
+
 \newpage
 \section{Slučajevi upotrebe}
 
@@ -459,6 +480,165 @@
 8. \textbf{Specijalni zahtevi}: U slučaju ukora odeljenskog veća prethodno je održana sednica na kojoj je disciplinska mere izglasana. \\
 
 9. \textbf{Dodatne informacije}: Obavezna polja obrasca jesu: datum, nivo mere (opomena/ukor razrednog starešine/ukor odeljenskog veća), razlog izricanja mere. Opciono polje je napomena. Lakše disciplinske mere ne povlače smanjenje ocene iz vladanja. Odeljensko veće čine nastavnici koji izvode nastavu u određenom odeljenju. \\
+
+
+\subsection{Aktivnosti Direktora}
+
+
+\subsubsection{Slučaj upotrebe: Direktor pristupa kalendaru aktivnosti}
+1. \textbf{Kratak opis:} Sistem direktoru prikazuje kalendar aktivnosti. Direktor može praviti izmene u kalendaru.\\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} 
+\item Direktor
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Direktor je registrovani korisnik sistema. Direktor ima pristup Internetu. Sistem je u funkciji.\\
+
+4. \textbf{Postuslov:}  Kalendar aktivnosti je ažuriran novim informacijama.\\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} 
+\item Direktor klikće na dugme " Prikaži kalendar aktivnosti" 
+\item Sistem prikazuje direktoru kalendar aktivnosti
+\item Direktor klikom na dugme "Izmeni kalendar aktivnosi" pralazi na podtok slučaja upotrebe (1) 
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} 
+\item Nedovoljan broj radnih dana - Ukoliko u koraku (6) u podtoku (1) nakon izmene broj radnih dana ne ispunjava zakonski minimum,  Sistem šalje obaveštenje direktoru i onemogućava se klik na dugme "Završi" i prelazi se na korak (1).
+\end{enumerate}
+
+7. \textbf{Podtokovi}:  \\
+Podtok 1:
+\begin{enumerate}
+\item Sistem direktoru prikazuje novi formular sa opcijama " {Dodaj nastavni dan} ", " {Dodaj vannastavnu aktivnost} " i "{ Dodaj} nenastavni dan"
+\item Direktor klikće na odgovarajuće dugme
+\item Sistem prikazuje direktoru formu u kojoj određuje datumski interval važenja izmene
+\item Direktor unosi datum u formular
+\item Sistem unosi izmenu u kalendar aktivnosti
+\item Sistem šalje poruku o uspešnoj izmeni kalendara aktivnosti
+\item Direktor klikće na dugme " {Završi} " 
+\item Sistem vraća direktora na korak (2) iz osnovnog toka 
+\end{enumerate} 
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: - \\
+
+
+\subsubsection{Slučaj upotrebe: Direktor pristupa dnevnicima} 
+1. \textbf{Kratak opis:}  Sistem prikazuje direktoru sve dnevnike. Direktor može vršiti izmene u dnevnicima. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} 
+\item Direktor
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Direktor je registrovani korisnik sistema. Direktor ima pristup Internetu. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:}  Dnevnici su ažurirani ukoliko su izvršene izmene.\\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} 
+\item Direktor klikće na dugme " {Pogledaj dnevnike}" 
+\item Sistem prikazuje sve postojeće dnevnike
+\item Direktor odabira dnevnik željenog odeljenja
+\item Sistem pokazuje direktoru informacije sadržane u dnevniku
+\item Ukoliko direktor klikne na dugme " {Izmena} ocena"  {sistem} prebacuje izvršavanje na podtok slučaja upotrebe (1)
+\item Ukoliko direktor klikne na dugme " {Dodeljivanje} razrednog starešine" sistem prebacuje izvršavanje na podtok slučaja upotrebe (2)
+\item Ukoliko direktor klikne na dugme " {Pravdanje izostanka}" {sistem} prebacuje izvršavanje na podtok slučaja upotrebe (3)
+\item Ukoliko direktor klikne na dugme " {Dodeli zamenu}"  {sistem} prebacuje izvršavanje na podtok slučaja upotrebe (4)
+\item Direktor klikće na dugme "Nazad" 
+\item Sistem vraća direktora na početni ekran
+
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} 
+\item Učenik već postoji u sistemu - Ako sistem u koraku (4) utvrdi da učenik sa postojećim informacijama već postoji u sistemu, sistem ispisuje odgovarajuću poruku i vraća korisnika na korak (2) 
+\item Dodeljeno odeljenje ne postoji - Ako sistem u koraku (9) utvrdi da dodeljeno odeljenje ne postoji, prikazuje odgovarajuću poruku i vraća korisnika na korak (8).
+\end{enumerate}
+
+7. \textbf{Podtokovi}:  \\
+1: \\
+\begin{enumerate}
+\item Sistem prikazuje korisniku spisak učenika u odeljenju
+\item Korisnik klikće na učenika
+\item Sistem prikazuje sve ocene željenog učenika
+\item Korisnik menja određenu ocenu
+\item Korisnik klikće na  " {Završi} sa izmenama"
+\item Sistem unosi izmene
+\item Sistem vraća korisnika na korak (4) iz osnovnog toka
+\end{enumerate}
+2: \\
+\begin{enumerate}
+\item Sistem prikazuje korisniku spisak nastavnika
+\item Korisnik klikće na nastavnika
+\item Korisnik klikće na  " {Završi} sa izmenama"
+\item Sistem unosi izmene
+\item Sistem vraća korisnika na korak (4) iz osnovnog toka
+\end{enumerate}
+3: \\
+\begin{enumerate}
+\item Sistem prikazuje korisniku spisak učenika u odeljenju
+\item Korisnik klikće na učenika
+\item Sistem prikazuje sve izostanke željenog učenika
+\item Korisnik menja određen izostanak
+\item Korisnik klikće na  " {Završi} sa izmenama"
+\item Sistem unosi izmene
+\item Sistem vraća korisnika na korak (4) iz osnovnog toka
+\end{enumerate}
+4: \\
+\begin{enumerate}
+\item Sistem prikazuje korisniku spisak nastavnika koji predaju datom odeljenju
+\item Korisnik klikće na nastavnika koji predaje tom odeljenju
+\item Sistem prikazuje korisniku spisak nastavnika zaposlenih u školi
+\item Korisnik klikće na nastavnika zaposlenog u školi
+\item Sistem prikazuje korisniku sve predmete koje je nastavnik predavao odeljenju
+\item Sistem prikazuje korisniku spisak nastavnika koji predaju datom odeljenju
+\item Korisnik odabira predmete za koje želi da dodeli zamenu
+\item Korisnik klikće na  " {Završi} sa izmenama"
+\item Sistem unosi izmene
+\item Sistem vraća korisnika na korak (4) iz osnovnog toka
+\end{enumerate}
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: - \\
+
+
+\subsubsection{Slučaj upotrebe: Direktor pristupa pregledu finansija}
+1. \textbf{Kratak opis:}  Direktor ima uvid u finansijske dobitke i izdatke škole. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} 
+\item Direktor
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Direktor je registrovani korisnik sistema. Direktor ima pristup Internetu. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:}  - \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} 
+\item Direktor klikće na dugme " {Pogledaj finansije} " 
+\item Sistem prikazuje tabelu svih finansijskih transakcija
+\item Direktor klikće na dugme "{Nova transakcija}"
+\item Sistem prikazuje formu za unošenje informacija o finansijskim transakcijama
+\item Direktor unosi informacije o transakciji
+\item Sistem upisuje datu transakciju
+\item Sistem prikazuje ažuriranu zabelu svih transakcija
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:} -\\
+
+7. \textbf{Podtokovi}:  - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: - Ovaj slučaj upotrebe služi samo za upisivanje informacija o transakcijama i njihovom prikazivanju, ne i za obavljanje transakcija. \\
+
 
 
 \end{document}

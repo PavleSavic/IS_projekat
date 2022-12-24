@@ -491,49 +491,44 @@ TODO: dijagram nivoa 0
 
 \newpage
 \subsubsection{Slučaj upotrebe: Direktor ažurira kalendar aktivnosti}
-1. \textbf{Kratak opis:} Sistem direktoru prikazuje kalendar aktivnosti. Direktor može praviti izmene u kalendaru.\\
+1. \textbf{Kratak opis:} Direktor pristupa kalendaru aktivnosti i vrši željenu izmenu. Sistem validira i čuva unete podatke i obaveštava direktora o uspešnoj izmeni kalendara aktivnosti.\\
 
 2. \textbf{Učesnici:}
 \begin{enumerate} [label=(\alph*)]
 \item Direktor
 \end{enumerate} 
 
-3. \textbf{Preduslov:} Direktor je registrovani korisnik sistema. Direktor ima pristup Internetu. Sistem je u funkciji.\\
+3. \textbf{Preduslov:} Direktor je registrovani korisnik sistema. Direktor ima pristup Internetu. Sistem je u funkciji. Kalendar aktivnosti je kreiran. \\
 
-4. \textbf{Postuslov:}  Kalendar aktivnosti je ažuriran novim informacijama.\\
+4. \textbf{Postuslov:} U kalendar aktivnosti unete su željene izmene. Baza je ažurirana. \\
 
 5. \textbf{Osnovni tok:} 
 \begin{enumerate} [label=(\alph*)]
-\item Direktor klikće na dugme " Prikaži kalendar aktivnosti" 
-\item Sistem prikazuje direktoru kalendar aktivnosti
-\item Direktor klikom na dugme "Izmeni kalendar aktivnosi" pralazi na podtok slučaja upotrebe (1) 
+\item Direktor pristupa stranici na kojoj je prikazan kalendar aktivnosti
+\item Direktor pritiska na dugme ``Izmeni kalendar aktivnosti"  
+\item Sistem otvara pogled za ažuriranje kalendara
+\item Direktor pritiska na željeni datum u kalendaru
+\item Sistem prikazuje direktoru padajući meni sa aktivnostima
+\item Direktor odabira željenu aktivnost za taj datum
+\item Sistem validira unetu izmenu
+\item Sistem čuva izmenu u kalendaru
+\item Sistem vraća poruku o uspešnoj izmeni kalendara aktivnosti 
 \end{enumerate}
 
 6. \textbf{Alternativni tokovi:}
 \begin{enumerate} [label=(\roman*)]
-\item Nedovoljan broj radnih dana - Ukoliko u koraku (6) u podtoku (1) nakon izmene broj radnih dana ne ispunjava zakonski minimum,  Sistem šalje obaveštenje direktoru i onemogućava se klik na dugme "Završi" i prelazi se na korak (1).
+\item Nedovoljan broj nastavnih dana - Ukoliko u koraku (g) sistem utvrdi da nakon izmene broj nastavnih dana ne ispunjava zakonski minimum, sistem odbija izmenu i o tome obaveštava direktora. Proces se nastavlja iz koraka (c).
 \end{enumerate}
 
-7. \textbf{Podtokovi}:  \\
-Podtok 1:
-\begin{enumerate} [label=(\alph*)]
-\item Sistem direktoru prikazuje novi formular sa opcijama " {Dodaj nastavni dan} ", " {Dodaj vannastavnu aktivnost} " i "{ Dodaj} nenastavni dan"
-\item Direktor klikće na odgovarajuće dugme
-\item Sistem prikazuje direktoru formu u kojoj određuje datumski interval važenja izmene
-\item Direktor unosi datum u formular
-\item Sistem unosi izmenu u kalendar aktivnosti
-\item Sistem šalje poruku o uspešnoj izmeni kalendara aktivnosti
-\item Direktor klikće na dugme " {Završi} " 
-\item Sistem vraća direktora na korak (2) iz osnovnog toka 
-\end{enumerate} 
+7. \textbf{Podtokovi}:  - \\
 
 8. \textbf{Specijalni zahtevi}: - \\
 
-9. \textbf{Dodatne informacije}: - \\
+9. \textbf{Dodatne informacije}: Moguće aktivnosti za svaki datum su: nastavni dan, nenastavni dan, raspust i državni praznik. Direktor nema opciju da ukloni ili doda državni praznik. \\
 
 
-\subsubsection{Slučaj upotrebe: Direktor ažurira dnevnike} 
-1. \textbf{Kratak opis:}  Sistem prikazuje direktoru sve dnevnike. Direktor može vršiti izmene u dnevnicima. \\
+\subsubsection{Slučaj upotrebe: Direktor ažurira dnevnik} 
+1. \textbf{Kratak opis:} Direktor pristupa elektronskom dnevniku izabranog odeljenja i vrši željenu izmenu. Sistem validira i čuva unete podatke i obaveštava direktora o uspešnoj izmeni dnevnika. \\
 
 2. \textbf{Učesnici:}
 \begin{enumerate} [label=(\alph*)]
@@ -542,79 +537,84 @@ Podtok 1:
 
 3. \textbf{Preduslov:} Direktor je registrovani korisnik sistema. Direktor ima pristup Internetu. Sistem je u funkciji. \\
 
-4. \textbf{Postuslov:}  Dnevnici su ažurirani ukoliko su izvršene izmene.\\
+4. \textbf{Postuslov:}  U elektronski dnevnik unete su željene izmene. Baza je ažurirana.\\
 
 5. \textbf{Osnovni tok:} 
 \begin{enumerate} [label=(\alph*)]
-\item Direktor klikće na dugme " {Pogledaj dnevnike}" 
-\item Sistem prikazuje sve postojeće dnevnike
-\item Direktor odabira dnevnik željenog odeljenja
-\item Sistem pokazuje direktoru informacije sadržane u dnevniku
-\item Ukoliko direktor klikne na dugme " {Izmena} ocena"  {sistem} prebacuje izvršavanje na podtok slučaja upotrebe (1)
-\item Ukoliko direktor klikne na dugme " {Dodeljivanje} razrednog starešine" sistem prebacuje izvršavanje na podtok slučaja upotrebe (2)
-\item Ukoliko direktor klikne na dugme " {Pravdanje izostanka}" {sistem} prebacuje izvršavanje na podtok slučaja upotrebe (3)
-\item Ukoliko direktor klikne na dugme " {Dodeli zamenu}"  {sistem} prebacuje izvršavanje na podtok slučaja upotrebe (4)
-\item Direktor klikće na dugme "Nazad" 
-\item Sistem vraća direktora na početni ekran
+\item Direktor pristupa početnoj strani elektronskog dnevnika
+\item Direktor pritiskom na dugme odabira dnevnik željenog odeljenja
+\item Sistem prikazuje informacije iz dnevnika tog odeljenja
+\item Direktor pritiska na dugme za izmenu
+\item Sistem prikazuje direktoru opcije za izmenu
+\item Direktor vrši izmenu:
+\begin{enumerate} [label=(\roman*)]
+    \item Ukoliko direktor izabere opciju ``Izmena ocena'' sistem prebacuje izvršavanje na podtok P1
+    \item Ukoliko direktor izabere opciju ``Dodeljivanje razrednog starešine'' sistem prebacuje izvršavanje na podtok P2
+    \item Ukoliko direktor izabere opciju ``Pravdanje izostanka'' sistem prebacuje izvršavanje na podtok P3
+    \item Ukoliko direktor izabere opciju ``Promeni nastavnika'' sistem prebacuje izvršavanje na podtok P4
+\end{enumerate}
+\item Sistem vraća poruku o uspešnoj izmeni dnevnika
 
 \end{enumerate}
 
 6. \textbf{Alternativni tokovi:}
 \begin{enumerate} [label=(\roman*)]
-\item Učenik već postoji u sistemu - Ako sistem u koraku (4) utvrdi da učenik sa postojećim informacijama već postoji u sistemu, sistem ispisuje odgovarajuću poruku i vraća korisnika na korak (2) 
-\item Dodeljeno odeljenje ne postoji - Ako sistem u koraku (9) utvrdi da dodeljeno odeljenje ne postoji, prikazuje odgovarajuću poruku i vraća korisnika na korak (8).
+    \item Direktor ne vrši izmenu - Ako u koraku (f) osnovnog toka direktor izabere opciju ``Nazad'' proces se nastavlja iz koraka (c) osnovnog toka.
+    \item Direktor unosi nevalidne podatke u obrazac - Ako u koraku (h) podtoka P1 sistem utvrdi nevalidnu ocenu (ocena nije od 1 do 5) ili prazno obavezno polje obaveštava direktora obeležavanjem neispravnog polja. Direktor ispravlja neispravno polje. Proces se nastavlja iz koraka (f) podtoka P1.
+    \item Nastavnik već razredni drugom odeljenju - Ako u koraku (d) podtoka P2 sistem utvrdi da je odabrani nastavnik već dodeljen za razrednog starešinu drugom odeljenju, sistem odbija dodelu i o tome obaveštava direktora. Proces se nastavlja iz koraka (b) podtoka P2.
+    \item Direktor ne potvrđuje promenu statusa izostanka - Ako u koraku (f) podtoka P3 direktor odgovori odrično ili ugasi dialog box sistem ne evidentira promenu statusa izostanka. Proces se nastavlja iz koraka (c) podtoka P3.
+    \item Direktor pokušava nedozvoljenu zamenu nastavnika - Ako u koraku (f) podtoka P4 sistem utvrdi da bi promenom opterećenost nastavnika koji se menja pala ispod minimalne ili opterećnost nastavnika koji se bira kao zamena premašila maksimalnu dozvoljenu, sistem odbija zamenu i o razlozima obaveštava direktora. Proces se nastavlja iz koraka (a) podtoka P4.
 \end{enumerate}
 
-7. \textbf{Podtokovi}:  \\
-1: \\
+7. \textbf{Podtokovi}: \\
+P1: 
 \begin{enumerate} [label=(\alph*)]
-\item Sistem prikazuje korisniku spisak učenika u odeljenju
-\item Korisnik klikće na učenika
-\item Sistem prikazuje sve ocene željenog učenika
-\item Korisnik menja određenu ocenu
-\item Korisnik klikće na  " {Završi} sa izmenama"
-\item Sistem unosi izmene
-\item Sistem vraća korisnika na korak (4) iz osnovnog toka
+\item Sistem prikazuje direktoru spisak učenika u odeljenju
+\item Direktor pritiska na odabranog učenika
+\item Sistem prikazuje sve ocene odabranog učenika
+\item Direktor pritiska na ocenu koju želi da izmeni
+\item Sistem otvara obrazac sa informacijama o oceni
+\item Direktor menja sadržaj obrasca
+\item Direktor potvrđuje izmenu ocene
+\item Sistem validira unetu izmenu
+\item Sistem čuva izmenu u elektronskom dnevniku
 \end{enumerate}
-2: \\
+P2:
 \begin{enumerate} [label=(\alph*)]
-\item Sistem prikazuje korisniku spisak nastavnika
-\item Korisnik klikće na nastavnika
-\item Korisnik klikće na  " {Završi} sa izmenama"
-\item Sistem unosi izmene
-\item Sistem vraća korisnika na korak (4) iz osnovnog toka
+\item Sistem prikazuje direktoru spisak nastavnika
+\item Direktor pritiska na odabranog nastavnika
+\item Direktor potvrđuje dodelu razrednog
+\item Sistem validira dodelu
+\item Sistem čuva dodelu u elektronskom dnevniku
 \end{enumerate}
-3: \\
+P3:
 \begin{enumerate} [label=(\alph*)]
-\item Sistem prikazuje korisniku spisak učenika u odeljenju
-\item Korisnik klikće na učenika
-\item Sistem prikazuje sve izostanke željenog učenika
-\item Korisnik menja određen izostanak
-\item Korisnik klikće na  " {Završi} sa izmenama"
-\item Sistem unosi izmene
-\item Sistem vraća korisnika na korak (4) iz osnovnog toka
+\item Sistem prikazuje direktoru spisak učenika u odeljenju
+\item Direktor pritiska na odabranog učenika
+\item Sistem prikazuje listu izostanaka i status svakog izostanka
+\item Direktor pritiska na odabrani neopravdani izostanak
+\item Sistem prikazuje dialog box (da/ne) i pita direktora da li želi da promeni status neopravadnog izostanka
+\item Direktor potvrđuje izmenu
+\item Sistem čuva promenu statusa izostana u elektronskom dnevniku
 \end{enumerate}
-4: \\
+P4:
 \begin{enumerate} [label=(\alph*)]
-\item Sistem prikazuje korisniku spisak nastavnika koji predaju datom odeljenju
-\item Korisnik klikće na nastavnika koji predaje tom odeljenju
-\item Sistem prikazuje korisniku spisak nastavnika zaposlenih u školi
-\item Korisnik klikće na nastavnika zaposlenog u školi
-\item Sistem prikazuje korisniku sve predmete koje je nastavnik predavao odeljenju
-\item Sistem prikazuje korisniku spisak nastavnika koji predaju datom odeljenju
-\item Korisnik odabira predmete za koje želi da dodeli zamenu
-\item Korisnik klikće na  " {Završi} sa izmenama"
-\item Sistem unosi izmene
-\item Sistem vraća korisnika na korak (4) iz osnovnog toka
+\item Sistem prikazuje direktoru spisak nastavnika koji predaju datom odeljenju po predmetima
+\item Direktor pritiska na odabrani predmet za koji želi da promeni nastavnika
+\item Sistem prikazuje spisak nastavnika zaposlenih u školi koji predaju taj predmet
+\item Direktor pritiska na nastavnika zaposlenog u školi kojeg bira kao zamenu
+\item Direktor potvrđuje promenu 
+\item Sistem validira promenu
+\item Sistem čuva promenu u elektronskom dnevniku
 \end{enumerate}
 
-8. \textbf{Specijalni zahtevi}: - \\
+8. \textbf{Specijalni zahtevi}: U slučaju izmene ocene učenika direktor je prethodno utvrdio sa predmetnim nastavnikom da je došlo do greške prilikom upisa ocene. \\
 
-9. \textbf{Dodatne informacije}: - \\
+9. \textbf{Dodatne informacije}: Minimalna i maksimalna opterećenost nastavnika definisana je pravilnikom škole. Nastavnik može biti razredni starešina samo jednom odeljenju. Obrazac sadrži informacije o oceni: ocena, tip (kontrolni/pismeni/usmeni/aktivnost). Opciono polje je napomena. \\
 
 
 \subsubsection{Slučaj upotrebe: Direktor pravi finansijski izveštaj škole}
-1. \textbf{Kratak opis:}  Direktor na osnovu finansijskih prihoda i rashoda pravi finansijski izveštaj škole. Sistem validira i čuva unete podatke i obaveštava direktora o uspešno unetom izveštaju. \\
+1. \textbf{Kratak opis:} Direktor na osnovu finansijskih prihoda i rashoda pravi finansijski izveštaj škole. Sistem validira i čuva unete podatke i obaveštava direktora o uspešno unetom izveštaju. \\
 
 2. \textbf{Učesnici:}
 \begin{enumerate} [label=(\alph*)]
@@ -645,7 +645,8 @@ Podtok 1:
 
 6. \textbf{Alternativni tokovi:} 
 \begin{enumerate} [label=(\roman*)]
-\item Direktor unosi nevalidne podatke u formular - Ako u koraku (h) sistem utvrdi neispravno polje formulara sistem obaveštava nastavnika obeležavanjem nevalidnog polja. Direktor ispravlja neispravno polje. Proces se nastavlja iz koraka (f).
+\item Direktor unosi nevalidne podatke u formular - Ako u koraku (h) sistem utvrdi neispravno polje formulara sistem obaveštava direktora obeležavanjem nevalidnog polja. Direktor ispravlja neispravno polje. Proces se nastavlja iz koraka (f).
+\item Direktor uklanja transakciju iz izveštaja - Ukoliko u koraku (j) direktor utvrdi da je u izveštaj uneo pogrešnu transakciju, klikom bira opciju za uklanjanje te transakcije nakon čega sistem ažurira izveštaj. Proces se nastavlja iz koraka (j).  
 \end{enumerate}
 
 7. \textbf{Podtokovi}:  - \\

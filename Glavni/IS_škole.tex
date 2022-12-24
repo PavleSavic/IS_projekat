@@ -732,7 +732,6 @@ P4:
 \item Sistem obaveštava administratora da je nalog kreiran
 \end{enumerate}
 
-
 6. \textbf{Alternativni tokovi:}
 \begin{enumerate} [label=(\roman*)]
 \item Administrator unosi nevalidne podatke u formular - Ako u koraku (e) sistem utvrdi neispravno polje formulara, sistem obaveštava administratora obeležavanjem nevalidnog polja. Administrator ispravlja neispravno polje. Proces se nastavlja iz koraka (d).
@@ -752,9 +751,77 @@ P2:
 
 8. \textbf{Specijalni zahtevi}: - \\
 
-9. \textbf{Dodatne informacije}: Obavezna polja formulara za kreiranje nastavnika su: ime, prezime, e-mail adresa, broj telefona, obrazovanje, prethodno radno iskustvo. Obavezna polja formulara za kreiranje učenika su: ime, prezime, e-mail adresa, broj telefona, broj telefona roditelja, dosadašnje školovanje. Lozinka ne sme biti kraća od 8 karaktera, mora sadržati bar jedno slovo i bar jednu cifru. \\
+9. \textbf{Dodatne informacije}: Obavezna polja formulara za kreiranje nastavnika su: ime, prezime, JMBG, e-mail adresa, broj telefona, obrazovanje, prethodno radno iskustvo. Obavezna polja formulara za kreiranje učenika su: ime, prezime, JMBG, e-mail adresa, broj telefona, broj telefona roditelja, dosadašnje školovanje. Lozinka ne sme biti kraća od 8 karaktera, mora sadržati bar jedno slovo i bar jednu cifru. \\
 
 \subsubsection{Slučaj upotrebe: Administrator deaktivira nalog korisnika}
+1. \textbf{Kratak opis:} Administrator deaktivira profil korisnika sistema (nastavnika ili učenika). Sistem označava profil korisnika kao neaktivan, onemogućava buduće logovanje korisnika na sistem i obaveštava administratora o uspešnoj deaktivaciji naloga. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Administrator
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Administrator je korisnik sistema. Administrator ima pristup Internetu. Administrator ima potpisano ovlašćenje direktora za deaktiviranje naloga korisnika. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Nalog korisnika je deaktiviran i on više nema pristup sistemu. Baza je ažurirana. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Administrator otvara stranicu sa listom korisnika sistema
+\item Administrator pritiska dugme za deaktiviranje naloga kod odgovarajućeg korisnika
+\item Sistem prikazuje dialog box (da/ne) i pita administratora da li želi da deaktivira nalog korisnika
+\item Administrator potvrđuje deaktivaciju naloga korisnika
+\item Sistem označava nalog odabranog korisnika kao neaktivan
+\item Sistem obaveštava administratora da je nalog uspešno deaktiviran
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+    \item Administrator ne potvrđuje deaktivaciju - Ako u koraku (d) administrator odgovori odrično ili ugasi dialog box sistem ne deaktivira nalog korisnika. Proces se nastavlja iz koraka (a).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: - \\
+
+\subsubsection{Slučaj upotrebe: Administrator ažurira podatke o korisniku}
+1. \textbf{Kratak opis:} Administrator pristupa stranici korisnika i ažurira podatke o odabranom korisniku. Sistem validira i čuva izmene i obaveštava administratora o uspešnom ažuriranju podataka. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Administrator
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Administrator je korisnik sistema. Administrator ima pristup Internetu. Poznato je koji podatak o korisniku treba izmeniti i nova vrednost istog. Administrator ima potpisano ovlašćenje direktora za izmenu podataka o korisniku. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Podaci o odabranom korisniku su izmenjeni. Baza je ažurirana. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Administrator otvara stranicu sa listom korisnika sistema
+\item Administrator pritiska dugme za ažuriranje podataka kod odgovarajućeg korisnika
+\item Sistem otvara stranicu sa korisničkim podacima
+\item Administrator menja željeni podatak
+\item Sistem prikazuje dialog box (da/ne) i pita administratora da li želi da izvrši promenu
+\item Administrator potvrđuje ažuriranje korisničkih podataka
+\item Sistem validira izmenu
+\item Sistem čuva podatke
+\item Sistem obaveštava administratora da su podaci uspešno ažurirani
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+    \item Administrator ne potvrđuje promenu - Ako u koraku (f) administrator odgovori odrično ili ugasi dialog box sistem ne ažurira korisničke podatke. Proces se nastavlja iz koraka (c).
+    \item Nevalidna izmena podataka - Ako u koraku (g) sistem utvrdi da je izmena nevalidna (obavezan podatak se postavlja na prazan), sistem odbija izmenu i o tome obaveštava administratora. Proces se nastavlja iz koraka (c).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Podaci o korisniku uneti su u sistem prilikom kreiranja naloga. Sistem onemogućuje izmenu JMBG korisnika. \\
 
 
 

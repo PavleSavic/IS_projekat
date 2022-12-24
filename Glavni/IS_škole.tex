@@ -645,7 +645,7 @@ P4:
 
 6. \textbf{Alternativni tokovi:} 
 \begin{enumerate} [label=(\roman*)]
-\item Direktor unosi nevalidne podatke u formular - Ako u koraku (h) sistem utvrdi neispravno polje formulara sistem obaveštava direktora obeležavanjem nevalidnog polja. Direktor ispravlja neispravno polje. Proces se nastavlja iz koraka (f).
+\item Direktor unosi nevalidne podatke u formular - Ako u koraku (h) sistem utvrdi neispravno polje formulara, sistem obaveštava direktora obeležavanjem nevalidnog polja. Direktor ispravlja neispravno polje. Proces se nastavlja iz koraka (f).
 \item Direktor uklanja transakciju iz izveštaja - Ukoliko u koraku (j) direktor utvrdi da je u izveštaj uneo pogrešnu transakciju, klikom bira opciju za uklanjanje te transakcije nakon čega sistem ažurira izveštaj. Proces se nastavlja iz koraka (j).  
 \end{enumerate}
 
@@ -697,7 +697,78 @@ P4:
 \newpage
 \subsection{Aktivnosti Administratora}
 
+\subsubsection{Slučaj upotrebe: Administrator kreira nalog novog korisnika} 
+1. \textbf{Kratak opis:} Administrator pravi profil za novog korisnika sistema (nastavnika ili učenika). Sistem validira podatke i vraća potvrdu o uspešno kreiranom korisniku. Korisnik se prijavljuje na sistem i kreira svoju lozinku. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Administrator
+\item Novokreirani korisnik
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Administrator je korisnik sistema. Administrator ima pristup Internetu. Administrator ima potpisano ovlašćenje direktora za kreiranje naloga korisniku. Korisnik ima pristup Internetu. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Novi korisnik je kreiran i ima pristup sistemu. Baza je ažurirana. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Administrator otvara stranicu za kreiranje novog korisnika
+\item Sistem prikazuje opcije za kreiranje novog korisnika
+\item Administrator bira tip korisnika koji se kreira:
+\begin{enumerate} [label=(\roman*)]
+    \item Ukoliko administrator odabere opciju da se kreira nastavnički profil sistem prebacuje izvršavanje na tok P1.
+    \item Ukoliko administrator odabere opciju da se kreira učenički profil sistem prebacuje izvršavanje na tok P2.
+\end{enumerate}
+\item Administrator potvrđuje unete podatke pritiskom na dugme
+\item Sistem validira podatke
+\item Sistem kreira novog korisnika
+\item Sistem šalje e-mail sa linkom za pristup sistemu novokreiranom korisniku
+\item Novokreirani korisnik pristupa sistemu preko linka poslatog e-mailom
+\item Korisnik prilikom prvog pristupa sistemu postavlja svoju lozinku
+\item Korisnik potvrđuje postavljanje lozinke
+\item Sistem vrši validaciju formata lozinke
+\item Sistem postavlja lozinku korisnika
+\item Sistem obaveštava korisnika o uspešnom postavljanju lozinke
+\item Sistem obaveštava administratora da je nalog kreiran
+\end{enumerate}
+
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Administrator unosi nevalidne podatke u formular - Ako u koraku (e) sistem utvrdi neispravno polje formulara, sistem obaveštava administratora obeležavanjem nevalidnog polja. Administrator ispravlja neispravno polje. Proces se nastavlja iz koraka (d).
+\item Novokreiranom korisniku nije stigao e-mail - Ukoliko u koraku (h) korisnik utvrdi da mu nije stigao e-mail, zahteva ponovno slanje istog. Proces se nastavlja iz koraka (g).
+\item Neispravan format lozinke - Ako u koraku (k) sistem utvdi da se pokušava postavljanje kratke ili nedovoljno bezbedne lozinke, sistem odbija postavljanje lozinke i o tome obaveštava korisnika. Korisnik ispravlja lozinku. Proces se nastavlja iz koraka (i).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: \\
+P1:
+\begin{enumerate} [label=(\alph*)]
+\item Administrator popunjava formular za kreiranje nastavnika
+\end{enumerate}
+P2:
+\begin{enumerate} [label=(\alph*)]
+\item Administrator popunjava formular za kreiranje učenika
+\end{enumerate}
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Obavezna polja formulara za kreiranje nastavnika su: ime, prezime, e-mail adresa, broj telefona, obrazovanje, prethodno radno iskustvo. Obavezna polja formulara za kreiranje učenika su: ime, prezime, e-mail adresa, broj telefona, broj telefona roditelja, dosadašnje školovanje. Lozinka ne sme biti kraća od 8 karaktera, mora sadržati bar jedno slovo i bar jednu cifru. \\
+
+\subsubsection{Slučaj upotrebe: Administrator deaktivira nalog korisnika}
 
 
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -292,7 +292,7 @@ TODO: dijagram nivoa 0
 5. \textbf{Osnovni tok:} 
 \begin{enumerate} [label=(\alph*)]
 \item Nastavnik pristupa stranici na kojoj je prikazan raspored časova
-\item Nastavnik pritiska na dugme ispod odgovarajućeg dana  
+\item Nastavnik pritiska na odabrani dana  
 \item Sistem otvara formular za upis podataka o času koji se dodaje u raspored
 \item Nastavnik popunjava formular traženim podacima
 \item Nastavnik pritiskom na dugme potvrđuje slanje zahteva za unos časa u raspored
@@ -313,7 +313,7 @@ TODO: dijagram nivoa 0
 
 8. \textbf{Specijalni zahtevi}: Nastavnik dodatnu/dopunsku nastavu može zakazati samo u terminu 7. časa u prvoj smeni (predčas u drugoj smeni). \\
 
-9. \textbf{Dodatne informacije}: Obavezna polja formulara su: naziv predmeta, odeljenje, tip časa (dopunska/dodatna). Opciono polje je napomena. \\
+9. \textbf{Dodatne informacije}: Obavezna polja formulara su: naziv predmeta, odeljenje, broj kabineta, tip časa (dopunska/dodatna). Opciono polje je napomena. \\
 
 
 \subsubsection{Slučaj upotrebe: Nastavnik upisuje ocenu učeniku} 
@@ -636,7 +636,7 @@ P4:
 \item Direktor pritiskom na dugme potvrđuje unos
 \item Sistem vrši validaciju podataka
 \item Sistem upisuje datu transakciju
-\item Sistem prikazuje ažuriran finansijski izveštaj \footnote{Koraci (d), (e), (f), (g), (h), (i), (j) ponavljaju se sve dok ima transakcija koje je potrebno zavesti u izveštaj}
+\item Sistem prikazuje ažuriran finansijski izveštaj\footnote{Koraci (d), (e), (f), (g), (h), (i), (j) ponavljaju se sve dok ima transakcija koje je potrebno zavesti u izveštaj}
 \item Direktor pritiska dugme za zaključivanje izveštaja
 \item Sistem čuva podatke
 \item Sistem vraća poruku o uspešno kreiranom izveštaju
@@ -823,6 +823,78 @@ P2:
 
 9. \textbf{Dodatne informacije}: Podaci o korisniku uneti su u sistem prilikom kreiranja naloga. Sistem onemogućuje izmenu JMBG korisnika. \\
 
+\subsubsection{Slučaj upotrebe: Administrator kreira kalendar aktivnosti}
+1. \textbf{Kratak opis:} Na početku školske godine administrator pristupa kalendaru i popunjava ga aktivnostima za svaki datum do kraja školske godine u skladu sa planom rada škole. Sistem validira i čuva unete podatke. Sistem obaveštava administratora o uspešnom kreiranju kalendara aktivnosti. \\ 
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Administrator
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Administrator je registrovani korisnik sistema. Administrator ima pristup Internetu. Administrator ima plan rada škole potpisan od strane direktora. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Kalendar aktivnosti je kreiran i vidljiv svim korisnicima sistema. Baza je ažurirana. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Administrator pristupa kalendaru
+\item Administrator pritiska na određeni datum za koji želi da unese aktivnost
+\item Sistem prikazuje administratoru padajući meni sa aktivnostima
+\item Administrator odabira željenu aktivnost za taj datum\footnote{Koraci (b), (c), (d) ponavljaju se sve dok se ne popuni kalendar aktivnosti}
+\item Sistem validira kalendar aktivnosti
+\item Sistem čuva kalendar aktivnosti
+\item Sistem vraća poruku o uspešnom kreiranju kalendara aktivnosti
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Nedovoljan broj nastavnih dana - Ukoliko u koraku (e) sistem utvrdi da kreirani kalendar ne ispunjava zakonski minimum broja nastavnih dana, sistem ne prihvata kreiranje kalendara i o tome obaveštava administratora. Proces se nastavlja iz koraka (b).
+\end{enumerate}
+
+7. \textbf{Podtokovi}:  - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Moguće aktivnosti za svaki datum su: nastavni dan, nenastavni dan, raspust i državni praznik. Prilikom unošenja aktivnosti administrator može selektovati više uzastopnih datuma i za njih odjednom odabrati aktivnost. \\
+
+
+\subsubsection{Slučaj upotrebe: Administrator kreira raspored časova}
+1. \textbf{Kratak opis:} Na početku školske godine u dogovoru sa direktorom i nastavnicima administrator unosi raspored časova za radnu nedelju u sistem. Sistem validira i čuva unete podatke. Sistem obaveštava administratora o uspešno kreiranom rasporedu časova. \\ 
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Administrator
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Administrator je registrovani korisnik sistema. Administrator ima pristup Internetu. Administrator ima raspored časova potpisan od strane direktora. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Raspored časova je kreiran i vidljiv svim korisnicima sistema. Baza je ažurirana. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Administrator pristupa stranici za kreiranje rasporeda časova
+\item Sistem prikazuje stranicu sa terminima u radnoj nedelji podeljenim po danima
+\item Administrator pritiska na odabrani termin
+\item Sistem otvara formular za upis podataka o času koji se dodaje u raspored u odabranom terminu
+\item Administrator popunjava formular odgovarajućim podacima
+\item Administrator potvđuje dodavanje časa 
+\item Sistem validira unete podatke\footnote{Koraci (b), (c), (d), (e), (f), (g) ponavljaju se sve dok se ne ispuni fond časova}
+\item Sistem vrši proveru da li je došlo do preklapanja u rasporedu časova
+\item Sistem čuva raspored časova
+\item Sistem vraća poruku o uspešnom kreiranju rasporeda časova
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+\item Administrator unosi nevalidne podatke u formular - Ako u koraku (g) sistem utvrdi nevalidne podatke (obavezna polja ostala nepopunjena) obaveštava administratora obeležavanjem neispravnog polja. Administrator ispravlja neispravno polje. Proces se nastavlja iz koraka (e).
+\item U rasporedu postoje preklapanja - Ako u koraku (h) sistem utvrdi da postoje preklapanja u rasporedu časova, sistem odbija kreiranje rasporeda i obaveštava administratora ispisivanjem časova koji se preklapaju. Proces se nastavlja iz koraka (b).
+\end{enumerate}
+
+7. \textbf{Podtokovi}:  - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Obavezna polja formulara su: naziv predmeta ili vannastavne aktivnosti, odeljenje i broj kabineta. Opciono polje je napomena. \\
 
 
 \end{document}

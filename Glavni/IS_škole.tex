@@ -205,7 +205,7 @@ TODO: dijagram nivoa 0
 
 5. \textbf{Osnovni tok:} 
 \begin{enumerate} [label=(\alph*)]
-\item Učenik pristupa stranici sa rasporedom vannastavnih aktivnosti
+\item Učenik pristupa stranici sa listom vannastavnih aktivnosti
 \item Učenik pritiska na željenu aktivnost
 \item Sistem prikazuje kratak opis odabrane aktivnosti
 \item Učenik pritiska dugme za prijavu na željenu aktivnost
@@ -228,7 +228,7 @@ TODO: dijagram nivoa 0
 
 8. \textbf{Specijalni zahtevi}: Za željenu aktivnost dodeljen je koordinator. \\
 
-9. \textbf{Dodatne informacije}: Škola nudi vannastavne aktivnosti kao što su: sportske sekcije, glumačka sekcija, muzička sekcija, besedništvo. Broj raspoloživih mesta specifičan je za svaku sekciju. \\
+9. \textbf{Dodatne informacije}: Škola nudi vannastavne aktivnosti kao što su: sportske sekcije, glumačka sekcija, muzička sekcija, besedništvo. Broj raspoloživih mesta specifičan je za svaku sekciju. Maksimalna opterećenost nastavnika definisana je pravilnikom škole. Obaveze učenika koji su prijavljeni na neku vannastavnu aktivnost uzimaju se u obzir kao kriterijum prilikom pravljenja rasporeda časova. \\
 
 \newpage
 \subsection{Aktivnosti Nastavnika}
@@ -610,7 +610,7 @@ P4:
 
 8. \textbf{Specijalni zahtevi}: U slučaju izmene ocene učenika direktor je prethodno utvrdio sa predmetnim nastavnikom da je došlo do greške prilikom upisa ocene. \\
 
-9. \textbf{Dodatne informacije}: Minimalna i maksimalna opterećenost nastavnika definisana je pravilnikom škole. Nastavnik može biti razredni starešina samo jednom odeljenju. Obrazac sadrži informacije o oceni: ocena, tip (kontrolni/pismeni/usmeni/aktivnost). Opciono polje je napomena. \\
+9. \textbf{Dodatne informacije}: Minimalna i maksimalna opterećenost nastavnika definisane su pravilnikom škole. Nastavnik može biti razredni starešina samo jednom odeljenju. Obrazac sadrži informacije o oceni: ocena, tip (kontrolni/pismeni/usmeni/aktivnost). Opciono polje je napomena. \\
 
 
 \subsubsection{Slučaj upotrebe: Direktor pravi finansijski izveštaj škole}
@@ -691,7 +691,7 @@ P4:
 
 8. \textbf{Specijalni zahtevi}: Roditelj ili staratelj upoznat je sa disciplinskim postupkom koji se vodi protiv učenika. U slučaju ukora nastavničkog veća ili isključenja iz škole prethodno je održana sednica nastavičkog veća na kojoj je disciplinska mere izglasana. \\
 
-9. \textbf{Dodatne informacije}: Obavezna polja obrasca jesu: datum, nivo mere (ukor direktora/ukor nastavničkog veća/isključenje učenika iz škole), razlog izricanja mere. Opciono polje je napomena. Lakše disciplinske mere povlače smanjenje ocene iz vladanja (ukor direktora na 4 ili 3, ukor nastavničkog veća na 2, isklučenje iz škola na 1). Nastavničko veće čine svi nastavnici zaposleni u školi. \\
+9. \textbf{Dodatne informacije}: Obavezna polja obrasca jesu: datum, nivo mere (ukor direktora/ukor nastavničkog veća/isključenje učenika iz škole), razlog izricanja mere. Opciono polje je napomena. Teže disciplinske mere povlače smanjenje ocene iz vladanja (ukor direktora na 4 ili 3, ukor nastavničkog veća na 2, isključenje iz škole na 1). Nastavničko veće čine svi nastavnici zaposleni u školi. U slučaju isključenja učenika iz škole administrator će deaktivirati nalog učenika. \\
 
 
 \newpage
@@ -734,9 +734,9 @@ P4:
 
 6. \textbf{Alternativni tokovi:}
 \begin{enumerate} [label=(\roman*)]
-\item Administrator unosi nevalidne podatke u formular - Ako u koraku (e) sistem utvrdi neispravno polje formulara, sistem obaveštava administratora obeležavanjem nevalidnog polja. Administrator ispravlja neispravno polje. Proces se nastavlja iz koraka (d).
-\item Novokreiranom korisniku nije stigao e-mail - Ukoliko u koraku (h) korisnik utvrdi da mu nije stigao e-mail, zahteva ponovno slanje istog. Proces se nastavlja iz koraka (g).
-\item Neispravan format lozinke - Ako u koraku (k) sistem utvdi da se pokušava postavljanje kratke ili nedovoljno bezbedne lozinke, sistem odbija postavljanje lozinke i o tome obaveštava korisnika. Korisnik ispravlja lozinku. Proces se nastavlja iz koraka (i).
+\item Administrator unosi nevalidne podatke u formular - Ako u koraku (e) glavnog toka sistem utvrdi neispravno polje formulara (prazno obavezno polje ili u sistemu već postoji korisnik sa istim JMBG), sistem obaveštava administratora obeležavanjem nevalidnog polja. Administrator ispravlja neispravno polje. Proces se nastavlja iz koraka (d) glavnog toka.
+\item Novokreiranom korisniku nije stigao e-mail - Ukoliko u koraku (h) glavnog toka korisnik utvrdi da mu nije stigao e-mail, zahteva ponovno slanje istog. Proces se nastavlja iz koraka (g) glavnog toka.
+\item Neispravan format lozinke - Ako u koraku (k) glavnog toga sistem utvdi da se pokušava postavljanje kratke ili nedovoljno bezbedne lozinke, sistem odbija postavljanje lozinke i o tome obaveštava korisnika. Korisnik ispravlja lozinku. Proces se nastavlja iz koraka (i) glavnog toka.
 \end{enumerate}
 
 7. \textbf{Podtokovi}: \\
@@ -751,7 +751,7 @@ P2:
 
 8. \textbf{Specijalni zahtevi}: - \\
 
-9. \textbf{Dodatne informacije}: Obavezna polja formulara za kreiranje nastavnika su: ime, prezime, JMBG, e-mail adresa, broj telefona, obrazovanje, prethodno radno iskustvo. Obavezna polja formulara za kreiranje učenika su: ime, prezime, JMBG, e-mail adresa, broj telefona, broj telefona roditelja, dosadašnje školovanje. Lozinka ne sme biti kraća od 8 karaktera, mora sadržati bar jedno slovo i bar jednu cifru. \\
+9. \textbf{Dodatne informacije}: Obavezna polja formulara za kreiranje nastavnika su: ime, prezime, JMBG, e-mail adresa, broj telefona, obrazovanje, predmet koji predaje i prethodno radno iskustvo. Obavezna polja formulara za kreiranje učenika su: ime, prezime, JMBG, e-mail adresa, broj telefona, broj telefona roditelja, dosadašnje školovanje. Lozinka ne sme biti kraća od 8 karaktera, mora sadržati bar jedno slovo i bar jednu cifru. \\
 
 \subsubsection{Slučaj upotrebe: Administrator deaktivira nalog korisnika}
 1. \textbf{Kratak opis:} Administrator deaktivira profil korisnika sistema (nastavnika ili učenika). Sistem označava profil korisnika kao neaktivan, onemogućava buduće logovanje korisnika na sistem i obaveštava administratora o uspešnoj deaktivaciji naloga. \\
@@ -890,11 +890,83 @@ P2:
 \item U rasporedu postoje preklapanja - Ako u koraku (h) sistem utvrdi da postoje preklapanja u rasporedu časova, sistem odbija kreiranje rasporeda i obaveštava administratora ispisivanjem časova koji se preklapaju. Proces se nastavlja iz koraka (b).
 \end{enumerate}
 
-7. \textbf{Podtokovi}:  - \\
+7. \textbf{Podtokovi}: - \\
 
 8. \textbf{Specijalni zahtevi}: - \\
 
 9. \textbf{Dodatne informacije}: Obavezna polja formulara su: naziv predmeta ili vannastavne aktivnosti, odeljenje i broj kabineta. Opciono polje je napomena. \\
+
+\subsubsection{Slučaj upotrebe: Administrator dodeljuje nadležnost nad odeljenjem nastavniku}
+1. \textbf{Kratak opis:} Administrator pristupa korisničkom profilu nastavnika i daje mu nadležnost za držanje nastave iz svog predmeta određenom odeljenju. Sistem validira i čuva izmene i obaveštava administratora o uspešno dodatoj nadležnosti. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Administrator
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Administrator je korisnik sistema. Administrator ima pristup Internetu. Administrator ima potpisano ovlašćenje direktora za dodelu nadležnosti nastavniku. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Nastavniku je dodeljena nadležnost nad odeljenjem. Baza je ažurirana. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Administrator pristupa stranici sa listom nastavnika podeljenih po predmetima koji predaju
+\item Administrator pritiska na odabranog nastavnika
+\item Sistem prikazuje korisnički profil nastavnika
+\item Administrator pritiska na dugme ``Dodaj časove''
+\item Sistem prikazuje spisak odeljenja kojima nije dodeljen nastavnik iz odgovarajućeg predmeta
+\item Administrator pritiskom na dugme bira odeljenje koje dodeljuje nastavniku
+\item Sistem validira dodelu nadležnosti
+\item Sistem čuva dodelu nadležnosti
+\item Sistem obaveštava administratora o uspešnoj dodeli nadležnosti
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+    \item Administrator pokušava nedozvoljenu dodelu nadležnosti - Ako u koraku (g) sistem utvrdi da bi dodelom nadležnosti opterećnost nastavnika premašila maksimalnu dozvoljenu, sistem odbija dodelu i o razlozima obaveštava administratora. Proces se nastavlja iz koraka (c).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Maksimalna opterećenost nastavnika definisana je pravilnikom škole. Dodeljene nadležnosti nastavnicima uzimaju se u obzir kao kriterijum prilikom pravljenja rasporeda časova. \\
+
+\subsubsection{Slučaj upotrebe: Administrator odabira nastavnika za koordinatora vannastavne aktivnosti}
+1. \textbf{Kratak opis:} Administrator pristupa korisničkom profilu nastavnika i proglašava ga za koordinatora odabrane vannastavne aktivnosti. Sistem validira i čuva izmene i obaveštava administratora o uspešno odabranom koordinatoru. \\
+
+2. \textbf{Učesnici:}
+\begin{enumerate} [label=(\alph*)]
+\item Administrator
+\end{enumerate} 
+
+3. \textbf{Preduslov:} Administrator je korisnik sistema. Administrator ima pristup Internetu. Nastavnik se prijavio za poziciju koordinatora odabrane aktivnosti. Administrator ima potpisano ovlašćenje direktora za odabir nastavnika za koordinatora. Sistem je u funkciji. \\
+
+4. \textbf{Postuslov:} Nastavnik je proglašen za koordinatora vannastavne aktivnosti. Baza je ažurirana. \\
+
+5. \textbf{Osnovni tok:} 
+\begin{enumerate} [label=(\alph*)]
+\item Administrator pristupa stranici sa listom vannastavnih aktivnosti
+\item Administrator pritiska na odabranu vannastavnu aktivnost
+\item Sistem prikazuje informacije o odabranoj aktivnosti
+\item Administrator pritiska na dugme ``Odaberi koordinatora''
+\item Sistem prikazuje spisak nastavnika
+\item Administrator pritiska na nastavnika kog proglašava za koordinatora odabrane aktivnosti
+\item Sistem validira odabir koordinatora
+\item Sistem čuva odabir koordinatora
+\item Sistem obaveštava administratora o uspešnoj dodeli nadležnosti
+\end{enumerate}
+
+6. \textbf{Alternativni tokovi:}
+\begin{enumerate} [label=(\roman*)]
+    \item Administrator pokušava nedozvoljen odabir koordinatora - Ako u koraku (g) sistem utvrdi da bi izborom za koordinatora odabrane vannastavne aktivnosti opterećnost nastavnika premašila maksimalnu dozvoljenu, sistem odbija izbor i o razlozima obaveštava administratora. Proces se nastavlja iz koraka (e).
+\end{enumerate}
+
+7. \textbf{Podtokovi}: - \\
+
+8. \textbf{Specijalni zahtevi}: - \\
+
+9. \textbf{Dodatne informacije}: Škola nudi vannastavne aktivnosti kao što su: sportske sekcije, glumačka sekcija, muzička sekcija, besedništvo. Koordinator za vannastavnu aktivnost se bira na nivou škole. Vannastavne aktivnosti održavaju se u jednom terminu u radnoj nedelji. Maksimalna opterećenost nastavnika definisana je pravilnikom škole. Obaveze nastavnika koji su koordinatori neke vannastavne aktivnosti uzimaju se u obzir kao kriterijum prilikom pravljenja rasporeda časova. \\
 
 
 \end{document}

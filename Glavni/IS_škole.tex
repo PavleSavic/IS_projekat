@@ -3,6 +3,7 @@
 \usepackage{enumitem}
 \usepackage{cmsrb}
 \usepackage{graphicx}
+\usepackage{lscape}
 \usepackage[OT2,T1]{fontenc} 
 \usepackage[serbian]{babel}
 
@@ -737,17 +738,17 @@ P4:
 
 5. \textbf{Osnovni tok:} 
 \begin{enumerate} [label=(\alph*)]
-\item Administrator otvara stranicu za kreiranje novog korisnika
+\item Administrator pristupa stranici za kreiranje novog korisnika
 \item Sistem prikazuje opcije za kreiranje novog korisnika
 \item Administrator bira tip korisnika koji se kreira:
 \begin{enumerate} [label=(\roman*)]
-    \item Ukoliko administrator odabere opciju da se kreira nastavnički profil sistem prebacuje izvršavanje na tok P1.
-    \item Ukoliko administrator odabere opciju da se kreira učenički profil sistem prebacuje izvršavanje na tok P2.
+    \item Ukoliko administrator odabere opciju da se kreira nastavnički profil sistem prebacuje izvršavanje na podtok P1
+    \item Ukoliko administrator odabere opciju da se kreira učenički profil sistem prebacuje izvršavanje na podtok P2
 \end{enumerate}
 \item Administrator potvrđuje unete podatke pritiskom na dugme
 \item Sistem validira podatke
 \item Sistem kreira novog korisnika
-\item Sistem šalje e-mail sa linkom za pristup sistemu novokreiranom korisniku
+\item Administrator šalje e-mail sa linkom za pristup sistemu novokreiranom korisniku
 \item Novokreirani korisnik pristupa sistemu preko linka poslatog e-mailom
 \item Korisnik prilikom prvog pristupa sistemu postavlja svoju lozinku
 \item Korisnik potvrđuje postavljanje lozinke
@@ -777,6 +778,18 @@ P2:
 8. \textbf{Specijalni zahtevi}: - \\
 
 9. \textbf{Dodatne informacije}: Obavezna polja formulara za kreiranje nastavnika su: ime, prezime, JMBG, e-mail adresa, broj telefona, obrazovanje, predmet koji predaje i prethodno radno iskustvo. Obavezna polja formulara za kreiranje učenika su: ime, prezime, JMBG, e-mail adresa, broj telefona, broj telefona roditelja, dosadašnje školovanje. Lozinka ne sme biti kraća od 8 karaktera, mora sadržati bar jedno slovo i bar jednu cifru. \\
+
+\begin{landscape}
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.28]{imgs/BPMN_kreiranje_korisnika.png}
+    \end{center}
+\caption{BPMN dijagram saradnje Kreiranje naloga novog korisnika}
+\end{figure}
+\end{landscape}
+
+
+
 
 \subsubsection{Slučaj upotrebe: Administrator deaktivira nalog korisnika}
 1. \textbf{Kratak opis:} Administrator deaktivira profil korisnika sistema (nastavnika ili učenika). Sistem označava profil korisnika kao neaktivan, onemogućava buduće logovanje korisnika na sistem i obaveštava administratora o uspešnoj deaktivaciji naloga. \\

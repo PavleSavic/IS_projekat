@@ -823,8 +823,6 @@ P2:
 \end{landscape}
 
 
-
-
 \subsubsection{Slučaj upotrebe: Administrator deaktivira nalog korisnika}
 1. \textbf{Kratak opis:} Administrator deaktivira profil korisnika sistema (nastavnika ili učenika). Sistem označava profil korisnika kao neaktivan, onemogućava buduće logovanje korisnika na sistem i obaveštava administratora o uspešnoj deaktivaciji naloga. \\
 
@@ -1033,34 +1031,31 @@ P2:
 \item Administrator pritiska na dugme ``Odaberi koordinatora''
 \item Sistem prikazuje spisak nastavnika
 \item Administrator pritiska na nastavnika kog proglašava za koordinatora odabrane aktivnosti
-\item Sistem validira odabir koordinatora
+\item Sistem proverava kvalifikacije nastavnika
+\item Sistem validira odabir nastavnika za koordinatora
 \item Sistem čuva odabir koordinatora
 \item Sistem obaveštava administratora o uspešnoj dodeli nadležnosti
 \end{enumerate}
 
 6. \textbf{Alternativni tokovi:}
 \begin{enumerate} [label=(\roman*)]
-    \item Administrator pokušava nedozvoljen odabir koordinatora - Ako u koraku (g) sistem utvrdi da bi izborom za koordinatora odabrane vannastavne aktivnosti opterećnost nastavnika premašila maksimalnu dozvoljenu, sistem odbija izbor i o razlozima obaveštava administratora. Proces se nastavlja iz koraka (e).
+    \item Nastavnik nije kvalifikovan za poziciju koordinatora - Ako u koraku (g) sistem utvrdi da nastavnik koji se bira za koordinatora nema potrebne kvalifikacije za tu poziciju, sistem odbija izbor i o razlozima obaveštava administratora. Proces se nastavlja iz koraka (e).
+    \item Opterećenost nastavnika premašuje maksimalnu dozvoljenu - Ako u koraku (h) sistem utvrdi da bi izborom za koordinatora odabrane vannastavne aktivnosti opterećnost nastavnika premašila maksimalnu dozvoljenu, sistem odbija izbor i o razlozima obaveštava administratora. Proces se nastavlja iz koraka (e).
 \end{enumerate}
 
 7. \textbf{Podtokovi}: - \\
 
-8. \textbf{Specijalni zahtevi}: - \\
+8. \textbf{Specijalni zahtevi}: Kvalifikacije nastavnika čuvaju se u sistemu. \\
 
 9. \textbf{Dodatne informacije}: Škola nudi vannastavne aktivnosti kao što su: sportske sekcije, glumačka sekcija, muzička sekcija, besedništvo. Koordinator za vannastavnu aktivnost se bira na nivou škole. Vannastavne aktivnosti održavaju se u jednom terminu u radnoj nedelji. Maksimalna opterećenost nastavnika definisana je pravilnikom škole. Obaveze nastavnika koji su koordinatori neke vannastavne aktivnosti uzimaju se u obzir kao kriterijum prilikom pravljenja rasporeda časova. \\
 
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.28]{imgs/BPMN_odabir_koordinatora.png}
+    \end{center}
+\caption{BPMN dijagram procesa Odabir nastavnika za koordinatora vannastavne aktivnosti}
+\end{figure}
+
+
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-

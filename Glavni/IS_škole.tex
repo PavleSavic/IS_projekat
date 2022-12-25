@@ -192,14 +192,14 @@ TODO: dijagram nivoa 0
 
 
 \subsubsection{Slučaj upotrebe: Učenik se prijavljuje na vannastavnu aktivnost} 
-1. \textbf{Kratak opis:} Učenik odabira željenu vannastavnu aktivnost. Sistem proverava raspoloživost, čuva promenu i o tome obaveštava učenika. \\
+1. \textbf{Kratak opis:} Učenik odabira željenu vannastavnu aktivnost. Sistem proverava raspoloživost, čuva prijavu i o tome obaveštava učenika. \\
 
 2. \textbf{Učesnici:}
 \begin{enumerate} [label=(\alph*)]
 \item Učenik
 \end{enumerate} 
 
-3. \textbf{Preduslov:} Učenik je registrovani korisnik sistema. Učenik ima pristup Internetu. Sistem je u funkciji. Raspored vannastavnih aktivnosti je kreiran. \\
+3. \textbf{Preduslov:} Učenik je registrovani korisnik sistema. Učenik ima pristup Internetu. Sistem je u funkciji. Za željenu aktivnost odabran je koordinator (neko od nastavnika). \\
 
 4. \textbf{Postuslov:} Sistem je evidentirao prijavu učenika na vannastavnu aktivnost. Baza je ažurirana. \\
 
@@ -226,9 +226,18 @@ TODO: dijagram nivoa 0
 
 7. \textbf{Podtokovi}: - \\
 
-8. \textbf{Specijalni zahtevi}: Za željenu aktivnost dodeljen je koordinator. \\
+8. \textbf{Specijalni zahtevi}: - \\
 
-9. \textbf{Dodatne informacije}: Škola nudi vannastavne aktivnosti kao što su: sportske sekcije, glumačka sekcija, muzička sekcija, besedništvo. Broj raspoloživih mesta specifičan je za svaku sekciju. Maksimalna opterećenost nastavnika definisana je pravilnikom škole. Obaveze učenika koji su prijavljeni na neku vannastavnu aktivnost uzimaju se u obzir kao kriterijum prilikom pravljenja rasporeda časova. \\
+9. \textbf{Dodatne informacije}: Škola nudi vannastavne aktivnosti kao što su: sportske sekcije, glumačka sekcija, muzička sekcija, besedništvo. Broj raspoloživih mesta specifičan je za svaku sekciju. Obaveze učenika koji su prijavljeni na neku vannastavnu aktivnost uzimaju se u obzir kao kriterijum prilikom pravljenja rasporeda časova. \\
+
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.3]{imgs/BPMN_prijava_na_aktivnost.png}
+    \end{center}
+\caption{BPMN dijagram procesa Prijavljivanje na vannastavnu aktivnost}
+\end{figure}
+
+
 
 \newpage
 \subsection{Aktivnosti Nastavnika}

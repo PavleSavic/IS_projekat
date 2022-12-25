@@ -58,9 +58,35 @@
 \section{Analiza sistema}
 
 \subsection{Uvod i osnovna ideja}
-\subsection{Korisnici sistema}
-\subsection{Kratak opis}
+	Projekat koji je predstavljen u nastavku predstavlja rad u okviru predmeta "Informacioni sistemi" na master studijama Matematičkog fakulteta u Beogradu. U njemu su predstavljene neke ideje i znanja stečeni na ovom kursu.
+	Osnovna ideja projekta je pravljenje informacionog sistema koji bi mogao da se koristi u nastavi u srednjim školama. Akcenat je stavljen na funkcionalnostima koje pruža nastavnički dnevnik poput evidentiranja časova i upisivanja ocena, ali takođe i pruža pregled relevantnih informacija u zavisnosti od grupe kojoj korisnik pripada. Projekat je predstavljen kao skup raznih dijagrama ( dijagram slučajeva upotrebe, dijagram klasa, dijagram aktivnost, BPMN dijagram i drugi) koji omogućavaju kako specifičniji, tako i opštiji pogled na celokupni sistem, odnosno neke njegove delove.
 
+\subsection{Korisnici sistema}
+	U ovom sistemu korisnik može biti prepoznat kao član jedne od pet navedenih grupa korisnika:
+\begin{enumerate}
+	\item Učenik
+	\item Nastavnik
+	\item Razredni starešina
+	\item Direktor
+	\item Administrator
+\end{enumerate}
+\subsection{Kratak opis}
+	Kako se informacije i funkcionalnosti menjaju u zavisnosti od korisnika sistema, tako su u nastavku opisane neke njihove
+mogućnosti za rad u ovom sistemu.
+	\begin{enumerate}
+	\item \textbf{Učenik} \\
+	Učenici su najbrojniji korisnici ovog sistema, a ujedno i osnovni razlog njegovog postojanja. Svakom učeniku dodeljeno je odeljenje kojem pripada. Manipulacija podacima im je onemogućena i njihove mogućnosti uglavnom se svode na izdvajanje i pregled njima relevantnih informacija, kao i onemogućen pristup određenim informacijama koje su vezane za druge učenike. Neke od informacija kojima imaju pristup su: 
+pregled svojih ocena, rasporeda časova, rasporeda redara, spiska nastavnika i druge . Od omogućenih funkcionalnosti može se izdvojiti prijavljivanje na vannastavne aktivnosti.
+ 
+	\item \textbf{Nastavnik} \\
+	Nastavnici predstavljaju predavače u školi. Na početku svake školske godine dodaju im se odeljenje kojima predaju, raspored časova kao i spisak predmeta koje te godine predaju. Ove informacije se mogu izmeniti u toku školske godine. Nastavnici su odgovorni za održavanje nastave i evidentiranje ocena i izostanaka učenika. Što se tiče manipulacije časovima, imaju mogućnost unošenja dopunskog ili dodatnog časa u raspored. Prilikom pregleda ocena učenika sistem nastavnicima omogućava viđenje samo ocena iz svog predmeta.
+	\item \textbf{Razredni starešina} \\
+	Razredne starešine predstavljaju posebnu grupu nastavnika. Svakom odeljenju je dodat tačno jedan razredni starešina. Razrednim starešinama se dodaju funkcionalnosti za rad sa svojim odeljenjem i njegovim učenicima. Neke od tih funkcionalnosti su opravdavanje izostanaka i izricanje lakše disciplinske mere učenicima. Oni takođe imaju mogućnost pregleda ocena svojih učenika iz svih predmeta.
+	\item \textbf{Direktor} \\
+	 Direktor je upravni organ svake škole. Njegove nadležnosti tiču se pitanja kao što su aktivnosti u toku godine i pravljenje finansijskih izveštaja. Od funkcionalnosti takođe imaju i pravljenje izmena u dnevniku i izricanja težih disciplinskih mera učenicima. Odgovoran je za blagovremeno rešavanje raznih problema koji nastaju u toku školske godine. Direktor ima pristup informacijama o svim nastavnicima, učenicima, njihovim ocenama, kao i informacijama o odeljenjima.
+	\item \textbf{Administrator} \\ 
+	Administratori su odgovorni za funkcionisanje sistema. Imaju pristup velikoj količini podataka, kao i razne funkcionalnosti koje se tiču registrovanju korisnika u sistem, kao i deaktivaciju njihovih naloga. Oni takođe mogu ažurirati informacije o korisnicima. Odgovorni su za uspostavljanje uslova za početak nove školske godine, a to je omogućeno kroz kreiranje kalendara aktivnosti, novih odeljenja i dnevnika ocena, kao i kroz modifikaciju postojećih.
+\end{enumerate}
 
 \newpage
 \section{Dijagrami toka podataka}

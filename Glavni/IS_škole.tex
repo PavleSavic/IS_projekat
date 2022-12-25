@@ -277,15 +277,15 @@ TODO: dijagram nivoa 0
 9. \textbf{Dodatne informacije}: Obavezna polja formulara jesu: datum, oznaka odeljenja, nastavna tema i spisak odsutnih učenika. Opciona polja su: literatura za temu, domaći zadatak i napomene. \\
 
 
-\subsubsection{Slučaj upotrebe: Nastavnik unosi dopunske i dodatne časove u raspored časova } 
-1. \textbf{Kratak opis:} U dogovoru sa zainteresovanim učenicima nastavnik dodaje dodatni ili dopunski čas u postojeći raspored časova. Sistem validira i čuva unete izmene i obaveštava nastavnika o uspešno ažuriranom rasporedu. \\
+\subsubsection{Slučaj upotrebe: Nastavnik unosi dopunski ili dodatni čas u raspored časova} 
+1. \textbf{Kratak opis:} U dogovoru sa zainteresovanim učenicima nastavnik dodaje dopunski ili dodatni čas u postojeći raspored časova. Sistem validira i čuva unete izmene i obaveštava nastavnika o uspešno ažuriranom rasporedu. \\
 
 2. \textbf{Učesnici:}
 \begin{enumerate} [label=(\alph*)]
 \item Nastavnik
 \end{enumerate} 
 
-3. \textbf{Preduslov:} Nastavnik je registrovani korisnik sistema. Nastavnik ima pristup Internetu. Sistem je u funkciji. \\
+3. \textbf{Preduslov:} Nastavnik je registrovani korisnik sistema. Nastavnik ima pristup Internetu. Sistem je u funkciji. Raspored časova je kreiran. \\
 
 4. \textbf{Postuslov:} Dopunski ili dodatni čas dodat je u raspored časova. Baza je ažurirana. \\
 
@@ -314,6 +314,13 @@ TODO: dijagram nivoa 0
 8. \textbf{Specijalni zahtevi}: Nastavnik dodatnu/dopunsku nastavu može zakazati samo u terminu 7. časa u prvoj smeni (predčas u drugoj smeni). \\
 
 9. \textbf{Dodatne informacije}: Obavezna polja formulara su: naziv predmeta, odeljenje, broj kabineta, tip časa (dopunska/dodatna). Opciono polje je napomena. \\
+
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.4]{imgs/BPMN_zakazivanje_dopunske_dodatne.png}
+    \end{center}
+\caption{BPMN dijagram procesa Unošenje dopunskog/dodatnog časa u raspored}
+\end{figure}
 
 
 \subsubsection{Slučaj upotrebe: Nastavnik upisuje ocenu učeniku} 

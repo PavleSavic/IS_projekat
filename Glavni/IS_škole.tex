@@ -85,7 +85,7 @@ pregled svojih ocena, rasporeda časova, rasporeda redara, spiska nastavnika i d
 	\item \textbf{Direktor} \\
 	 Direktor je upravni organ svake škole. Njegove nadležnosti tiču se pitanja kao što su aktivnosti u toku godine i pravljenje finansijskih izveštaja. Od funkcionalnosti takođe imaju i pravljenje izmena u dnevniku i izricanja težih disciplinskih mera učenicima. Odgovoran je za blagovremeno rešavanje raznih problema koji nastaju u toku školske godine. Direktor ima pristup informacijama o svim nastavnicima, učenicima, njihovim ocenama, kao i informacijama o odeljenjima.
 	\item \textbf{Administrator} \\ 
-	Administratori su odgovorni za funkcionisanje sistema. Imaju pristup velikoj količini podataka, kao i razne funkcionalnosti koje se tiču registrovanju korisnika u sistem, kao i deaktivaciju njihovih naloga. Oni takođe mogu ažurirati informacije o korisnicima. Odgovorni su za uspostavljanje uslova za početak nove školske godine, a to je omogućeno kroz kreiranje kalendara aktivnosti, novih odeljenja i dnevnika ocena, kao i kroz modifikaciju postojećih.
+	Administratori su odgovorni za funkcionisanje sistema. Imaju pristup velikoj količini podataka, kao i razne funkcionalnosti koje se tiču registrovanju korisnika u sistem, kao i deaktivaciju njihovih naloga. Oni takođe mogu ažurirati informacije o korisnicima. Odgovorni su za uspostavljanje uslova za početak nove školske godine, a to je omogućeno kroz kreiranje kalendara aktivnosti, rasporeda časova, novih odeljenja i dnevnika ocena, kao i kroz modifikaciju postojećih.
 \end{enumerate}
 
 \newpage
@@ -263,7 +263,6 @@ TODO: dijagram nivoa 0
     \end{center}
 \caption{BPMN dijagram procesa Prijavljivanje na vannastavnu aktivnost}
 \end{figure}
-
 
 
 \newpage
@@ -543,7 +542,7 @@ TODO: dijagram nivoa 0
 
 3. \textbf{Preduslov:} Direktor je registrovani korisnik sistema. Direktor ima pristup Internetu. Sistem je u funkciji. Kalendar aktivnosti je kreiran. \\
 
-4. \textbf{Postuslov:} U kalendar aktivnosti unete su željene izmene. Baza je ažurirana. \\
+4. \textbf{Postuslov:} U kalendar aktivnosti uneta je željena izmena. Baza je ažurirana. \\
 
 5. \textbf{Osnovni tok:} 
 \begin{enumerate} [label=(\alph*)]
@@ -560,7 +559,7 @@ TODO: dijagram nivoa 0
 
 6. \textbf{Alternativni tokovi:}
 \begin{enumerate} [label=(\roman*)]
-\item Nedovoljan broj nastavnih dana - Ukoliko u koraku (g) sistem utvrdi da nakon izmene broj nastavnih dana ne ispunjava zakonski minimum, sistem odbija izmenu i o tome obaveštava direktora. Proces se nastavlja iz koraka (c).
+\item Neispunjenost zakonskih uslova - Ukoliko u koraku (g) sistem utvrdi da nakon izmene broj nastavnih dana ne ispunjava zakonski minimum ili premašuje zakonski maksimum, sistem odbija izmenu i o razlogu obaveštava direktora. Proces se nastavlja iz koraka (c).
 \end{enumerate}
 
 7. \textbf{Podtokovi}:  - \\
@@ -568,6 +567,15 @@ TODO: dijagram nivoa 0
 8. \textbf{Specijalni zahtevi}: - \\
 
 9. \textbf{Dodatne informacije}: Moguće aktivnosti za svaki datum su: nastavni dan, nenastavni dan, raspust i državni praznik. Direktor nema opciju da ukloni ili doda državni praznik. \\
+
+
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.3]{imgs/BPMN_izmena_kalendara.png}
+    \end{center}
+\caption{BPMN dijagram procesa Ažuriranje kalendara aktivnosti}
+\end{figure}
+
 
 
 \subsubsection{Slučaj upotrebe: Direktor ažurira dnevnik} 
@@ -912,7 +920,7 @@ P2:
 
 6. \textbf{Alternativni tokovi:}
 \begin{enumerate} [label=(\roman*)]
-\item Nedovoljan broj nastavnih dana - Ukoliko u koraku (e) sistem utvrdi da kreirani kalendar ne ispunjava zakonski minimum broja nastavnih dana, sistem ne prihvata kreiranje kalendara i o tome obaveštava administratora. Proces se nastavlja iz koraka (b).
+\item Neispunjenost zakonskih uslova - Ukoliko u koraku (e) sistem utvrdi da kreirani kalendar ne ispunjava zakonski minimum ili premašuje zakonski maksimum broja nastavnih dana, sistem ne prihvata kreiranje kalendara i o razlozima obaveštava administratora. Proces se nastavlja iz koraka (b).
 \end{enumerate}
 
 7. \textbf{Podtokovi}:  - \\

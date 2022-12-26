@@ -58,7 +58,7 @@
 \section{Analiza sistema}
 
 \subsection{Uvod i osnovna ideja}
-	Projekat koji je predstavljen u nastavku predstavlja rad u okviru predmeta "Informacioni sistemi" na master studijama Matematičkog fakulteta u Beogradu. U njemu su predstavljene neke ideje i znanja stečeni na ovom kursu.
+	Projekat koji je predstavljen u nastavku predstavlja rad u okviru predmeta ``Informacioni sistemi'' na master studijama Matematičkog fakulteta u Beogradu. U njemu su predstavljene neke ideje i znanja stečeni na ovom kursu.
 	Osnovna ideja projekta je pravljenje informacionog sistema koji bi mogao da se koristi u nastavi u srednjim školama. Akcenat je stavljen na funkcionalnostima koje pruža nastavnički dnevnik poput evidentiranja časova i upisivanja ocena, ali takođe i pruža pregled relevantnih informacija u zavisnosti od grupe kojoj korisnik pripada. Projekat je predstavljen kao skup raznih dijagrama ( dijagram slučajeva upotrebe, dijagram klasa, dijagram aktivnost, BPMN dijagram i drugi) koji omogućavaju kako specifičniji, tako i opštiji pogled na celokupni sistem, odnosno neke njegove delove.
 
 \subsection{Korisnici sistema}
@@ -76,7 +76,7 @@ mogućnosti za rad u ovom sistemu.
 	\begin{enumerate}
 	\item \textbf{Učenik} \\
 	Učenici su najbrojniji korisnici ovog sistema, a ujedno i osnovni razlog njegovog postojanja. Svakom učeniku dodeljeno je odeljenje kojem pripada. Manipulacija podacima im je onemogućena i njihove mogućnosti uglavnom se svode na izdvajanje i pregled njima relevantnih informacija, kao i onemogućen pristup određenim informacijama koje su vezane za druge učenike. Neke od informacija kojima imaju pristup su: 
-pregled svojih ocena, rasporeda časova, rasporeda redara, spiska nastavnika i druge . Od omogućenih funkcionalnosti može se izdvojiti prijavljivanje na vannastavne aktivnosti.
+pregled svojih ocena, rasporeda časova, rasporeda redara, spiska nastavnika i druge. Od omogućenih funkcionalnosti može se izdvojiti prijavljivanje na vannastavne aktivnosti.
  
 	\item \textbf{Nastavnik} \\
 	Nastavnici predstavljaju predavače u školi. Na početku svake školske godine dodaju im se odeljenje kojima predaju, raspored časova kao i spisak predmeta koje te godine predaju. Ove informacije se mogu izmeniti u toku školske godine. Nastavnici su odgovorni za održavanje nastave i evidentiranje ocena i izostanaka učenika. Što se tiče manipulacije časovima, imaju mogućnost unošenja dopunskog ili dodatnog časa u raspored. Prilikom pregleda ocena učenika sistem nastavnicima omogućava viđenje samo ocena iz svog predmeta.
@@ -190,7 +190,14 @@ pregled svojih ocena, rasporeda časova, rasporeda redara, spiska nastavnika i d
 
 9. \textbf{Dodatne informacije}: Prema pravilniku škole za svako odeljenje prepodnevna i poslepodnevna smena smenjuju se na nedeljnom nivou. \\
 
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.5]{imgs/Dijagram_sekvence_ucenik_pristupa_rasporedu.png}
+    \end{center}
+\caption{Dijagram sekvence Pristupanje rasporedu časova}
+\end{figure}
 
+\newpage
 \subsubsection{Slučaj upotrebe: Učenik pristupa rasporedu redara} 
 1. \textbf{Kratak opis:} Učenik pristupa rasporedu redara odeljenja kom pripada za željenu nedelju. \\ 
 
@@ -363,6 +370,15 @@ pregled svojih ocena, rasporeda časova, rasporeda redara, spiska nastavnika i d
 \end{figure}
 
 
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.4]{imgs/Dijagram_sekvence_nastavnik_dodaje_cas.png}
+    \end{center}
+\caption{Dijagram sekvence Unošenje dopunskog/dodatnog časa u raspored}
+\end{figure}
+
+
+\newpage
 \subsubsection{Slučaj upotrebe: Nastavnik upisuje ocenu učeniku} 
 1. \textbf{Kratak opis:} Nakon održane provere znanja (pismene ili usmene) nastavnik unosi ostvarenu ocenu učenika u elektronski dnevnik. Sistem validira i čuva unetu ocenu i obaveštava nastavnika o uspešno unetoj oceni.  \\
 
@@ -400,7 +416,14 @@ pregled svojih ocena, rasporeda časova, rasporeda redara, spiska nastavnika i d
 
 9. \textbf{Dodatne informacije}: Obavezna polja obrasca su: ocena i tip ocene (kontrolni/pismeni/usmeni/aktivnost). Opciono polje je napomena. \\
 
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.4]{imgs/Dijagram_aktivnosti_nastavnik_upisuje_ocenu.png}
+    \end{center}
+\caption{Dijagram aktivnosti Upisivanje ocene učeniku}
+\end{figure}
 
+\newpage
 \subsubsection{Slučaj upotrebe: Nastavnik zaključuje ocenu učeniku} 
 1. \textbf{Kratak opis:} Na osnovu ostvarenih ocena u toku školske godine nastavnik unosi zaključnu ocenu učenika u elektronski dnevnik. Sistem validira i čuva unetu ocenu i obaveštava nastavnika o uspešnom zaključivanju ocene. \\
 
@@ -489,6 +512,15 @@ pregled svojih ocena, rasporeda časova, rasporeda redara, spiska nastavnika i d
 \caption{BPMN dijagram saradnje Opravdavanje izostanka učeniku}
 \end{figure}
 
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.35]{imgs/Dijagram_sekvence_razredni_pravda_cas.png}
+    \end{center}
+\caption{Dijagram sekvence Opravdavanje izostanka učeniku}
+\end{figure}
+
+
+\newpage
 \subsubsection{Slučaj upotrebe: Razredni starešina izriče učeniku lakšu disciplinsku meru}
 1. \textbf{Kratak opis:} Na osnovu donesene odluke razredni starešina unosi u sistem lakšu disciplinsku meru izrečenu učeniku. Sistem validira i čuva unete podatke i o tome obaveštava razrednog starešinu. \\
 
@@ -984,8 +1016,17 @@ P2:
 
 8. \textbf{Specijalni zahtevi}: - \\
 
-9. \textbf{Dodatne informacije}: Obavezna polja formulara su: naziv predmeta ili vannastavne aktivnosti, odeljenje i broj kabineta. Opciono polje je napomena. \\
+9. \textbf{Dodatne informacije}: Obavezna polja formulara su: naziv predmeta ili vannastavne aktivnosti, nastavnik, odeljenje i broj kabineta. Opciono polje je napomena. \\
 
+
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.33]{imgs/Dijagram_aktivnosti_administrator_pravi_raspored_casova.png}
+    \end{center}
+\caption{Dijagram aktivnosti Kreiranje rasporeda časova}
+\end{figure}
+
+\newpage
 \subsubsection{Slučaj upotrebe: Administrator dodeljuje nadležnost nad odeljenjem nastavniku}
 1. \textbf{Kratak opis:} Administrator pristupa korisničkom profilu nastavnika i daje mu nadležnost za držanje nastave iz svog predmeta određenom odeljenju. Sistem validira i čuva izmene i obaveštava administratora o uspešno dodatoj nadležnosti. \\
 

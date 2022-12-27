@@ -355,7 +355,6 @@ pregled svojih ocena, rasporeda časova, kalendara aktivnosti, spiska nastavnika
 \end{figure}
 
 
-
 \subsubsection{Slučaj upotrebe: Nastavnik unosi dopunski ili dodatni čas u raspored časova} 
 1. \textbf{Kratak opis:} U dogovoru sa zainteresovanim učenicima nastavnik dodaje dopunski ili dodatni čas u postojeći raspored časova. Sistem validira i čuva unete izmene i obaveštava nastavnika o uspešno ažuriranom rasporedu. \\
 
@@ -749,6 +748,14 @@ P4:
 9. \textbf{Dodatne informacije}: Minimalna i maksimalna opterećenost nastavnika definisane su pravilnikom škole. Nastavnik može biti razredni starešina samo jednom odeljenju. Obrazac sadrži informacije o oceni: ocena, tip (kontrolni/pismeni/usmeni/aktivnost). Opciono polje je napomena. \\
 
 
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.4]{imgs/Dijagram_aktivnosti_direktor_azurira_dnevnik.png}
+    \end{center}
+\caption{Dijagram aktivnosti Ažuriranje dnevnika}
+\end{figure}
+
+\newpage
 \subsubsection{Slučaj upotrebe: Direktor pravi finansijski izveštaj škole}
 1. \textbf{Kratak opis:} Direktor na osnovu finansijskih prihoda i rashoda pravi finansijski izveštaj škole. Sistem validira i čuva unete podatke i obaveštava direktora o uspešno unetom izveštaju. \\
 
@@ -994,6 +1001,16 @@ P2:
 
 9. \textbf{Dodatne informacije}: Podaci o korisniku uneti su u sistem prilikom kreiranja naloga. Sistem onemogućuje izmenu JMBG korisnika. \\
 
+
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.4]{imgs/Dijagram_sekvence_administrator_azurira_podatke.png}
+    \end{center}
+\caption{Dijagram sekvence Ažuriranje podataka o korisniku}
+\end{figure}
+
+
+\newpage
 \subsubsection{Slučaj upotrebe: Administrator kreira kalendar aktivnosti}
 1. \textbf{Kratak opis:} Pre početka školske godine administrator pristupa kalendaru i popunjava ga aktivnostima za svaki datum do kraja školske godine u skladu sa planom rada škole. Sistem validira i čuva unete podatke. Sistem obaveštava administratora o uspešnom kreiranju kalendara aktivnosti. \\ 
 
@@ -1028,7 +1045,15 @@ P2:
 
 9. \textbf{Dodatne informacije}: Moguće aktivnosti za svaki datum su: nastavni dan, nenastavni dan, raspust i državni praznik. Prilikom unošenja aktivnosti administrator može selektovati više uzastopnih datuma i za njih odjednom odabrati aktivnost. \\
 
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.35]{imgs/Dijagram_aktivnosti_administrator_kreira_kalendar.png}
+    \end{center}
+\caption{Dijagram aktivnosti Kreiranje kalendara aktivnosti}
+\end{figure}
 
+
+\newpage
 \subsubsection{Slučaj upotrebe: Administrator kreira raspored časova}
 1. \textbf{Kratak opis:} Na početku školske godine u dogovoru sa direktorom i nastavnicima administrator unosi raspored časova za radnu nedelju u sistem. Sistem validira i čuva unete podatke. Sistem obaveštava administratora o uspešno kreiranom rasporedu časova. \\ 
 
@@ -1070,7 +1095,7 @@ P2:
 
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[scale=0.33]{imgs/Dijagram_aktivnosti_administrator_pravi_raspored_casova.png}
+        \includegraphics[scale=0.35]{imgs/Dijagram_aktivnosti_administrator_pravi_raspored_casova.png}
     \end{center}
 \caption{Dijagram aktivnosti Kreiranje rasporeda časova}
 \end{figure}

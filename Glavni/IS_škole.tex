@@ -76,7 +76,7 @@ mogućnosti za rad u ovom sistemu.
 	\begin{enumerate}
 	\item \textbf{Učenik} \\
 	Učenici su najbrojniji korisnici ovog sistema, a ujedno i osnovni razlog njegovog postojanja. Svakom učeniku dodeljeno je odeljenje kojem pripada. Manipulacija podacima im je onemogućena i njihove mogućnosti uglavnom se svode na izdvajanje i pregled njima relevantnih informacija, kao i onemogućen pristup određenim informacijama koje su vezane za druge učenike. Neke od informacija kojima imaju pristup su: 
-pregled svojih ocena, rasporeda časova, rasporeda redara, spiska nastavnika i druge. Od omogućenih funkcionalnosti može se izdvojiti prijavljivanje na vannastavne aktivnosti.
+pregled svojih ocena, rasporeda časova, kalendara aktivnosti, spiska nastavnika i druge. Od omogućenih funkcionalnosti može se izdvojiti prijavljivanje na vannastavne aktivnosti.
  
 	\item \textbf{Nastavnik} \\
 	Nastavnici predstavljaju predavače u školi. Na početku svake školske godine dodaju im se odeljenje kojima predaju, raspored časova kao i spisak predmeta koje te godine predaju. Ove informacije se mogu izmeniti u toku školske godine. Nastavnici su odgovorni za održavanje nastave i evidentiranje ocena i izostanaka učenika. Što se tiče manipulacije časovima, imaju mogućnost unošenja dopunskog ili dodatnog časa u raspored. Prilikom pregleda ocena učenika sistem nastavnicima omogućava viđenje samo ocena iz svog predmeta.
@@ -198,36 +198,39 @@ pregled svojih ocena, rasporeda časova, rasporeda redara, spiska nastavnika i d
 \end{figure}
 
 \newpage
-\subsubsection{Slučaj upotrebe: Učenik pristupa rasporedu redara} 
-1. \textbf{Kratak opis:} Učenik pristupa rasporedu redara odeljenja kom pripada za željenu nedelju. \\ 
+\subsubsection{Slučaj upotrebe: Učenik pristupa kalendaru aktivnosti} 
+1. \textbf{Kratak opis:} Učenik pristupa kalendaru aktivnosti odabranog meseca. \\ 
 
 2. \textbf{Učesnici:}
 \begin{enumerate} [label=(\alph*)]
 \item Učenik
 \end{enumerate} 
 
-3. \textbf{Preduslov:} Učenik je registrovani korisnik sistema. Učenik ima pristup Internetu. Sistem je u funkciji. Učenik je dodeljen odeljenju. \\
+3. \textbf{Preduslov:} Učenik je registrovani korisnik sistema. Učenik ima pristup Internetu. Sistem je u funkciji. \\
 
-4. \textbf{Postuslov:} Učenik je pristupio rasporedu redara i pročitao potrebne informacije. \\
+4. \textbf{Postuslov:} Učenik je pristupio kalendaru aktivnosti i pročitao potrebne informacije. \\
 
 5. \textbf{Osnovni tok:} 
 \begin{enumerate} [label=(\alph*)]
-\item Učenik pristupa početnoj stranici sa rasporedom redara svog odeljenja
-\item Učenik se pritiskom na dugme (``Levo''/``Desno'') kreće do rasporeda redara za traženu nedelju
-\item Sistem prikazuje raspored redara za traženu nedelju
+\item Učenik pristupa početnoj stranici kalendara aktivnosti
+\item Sistem prikazuje učeniku padajući meni za izbor godine i meseca
+\item Učenik pritiskom na željene opcije bira godinu i mesec
+\item Učenik pritiskom na dugme potvrđuje unos 
+\item Sistem obrađuje zahtev
+\item Sistem prikazuje kalendar aktivnosti za odabrani mesec i godinu
 \end{enumerate}
 
 
 6. \textbf{Alternativni tokovi:}
 \begin{enumerate} [label=(\roman*)]
-\item Raspored redara za traženu nedelju ne postoji - Ako u koraku (c) sistem utvrdi da raspored redara za traženu nedelju nije određen, obaveštava učenika odgovarajućom porukom. Proces se nastavlja iz koraka (b).
+\item Kalendar aktivnosti ne postoji - Ako u koraku (e) sistem utvrdi kalendar aktivnosti za odabrani mesec i godinu nije kreiran obaveštava učenika odgovarajućom porukom. Proces se nastavlja iz koraka (b).
 \end{enumerate}
 
 7. \textbf{Podtokovi}: - \\
 
 8. \textbf{Specijalni zahtevi}: - \\
 
-9. \textbf{Dodatne informacije}:  U toku nedelje dužnost redara u odeljenju obavlja dvoje učenika tog odeljenja. \\
+9. \textbf{Dodatne informacije}: Pre početku školske godine administrator kreira kalendar aktivnosti za nastupajuću školsku godinu. \\
 
 
 \subsubsection{Slučaj upotrebe: Učenik se prijavljuje na vannastavnu aktivnost} 
@@ -946,7 +949,7 @@ P2:
 9. \textbf{Dodatne informacije}: Podaci o korisniku uneti su u sistem prilikom kreiranja naloga. Sistem onemogućuje izmenu JMBG korisnika. \\
 
 \subsubsection{Slučaj upotrebe: Administrator kreira kalendar aktivnosti}
-1. \textbf{Kratak opis:} Na početku školske godine administrator pristupa kalendaru i popunjava ga aktivnostima za svaki datum do kraja školske godine u skladu sa planom rada škole. Sistem validira i čuva unete podatke. Sistem obaveštava administratora o uspešnom kreiranju kalendara aktivnosti. \\ 
+1. \textbf{Kratak opis:} Pre početka školske godine administrator pristupa kalendaru i popunjava ga aktivnostima za svaki datum do kraja školske godine u skladu sa planom rada škole. Sistem validira i čuva unete podatke. Sistem obaveštava administratora o uspešnom kreiranju kalendara aktivnosti. \\ 
 
 2. \textbf{Učesnici:}
 \begin{enumerate} [label=(\alph*)]

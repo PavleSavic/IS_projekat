@@ -1,4 +1,7 @@
 \documentclass{article}
+
+\usepackage{color}
+\usepackage{url}
 \usepackage[utf8]{inputenc}
 \usepackage{enumitem}
 \usepackage{cmsrb}
@@ -6,6 +9,9 @@
 \usepackage{lscape}
 \usepackage[OT2,T1]{fontenc} 
 \usepackage[serbian]{babel}
+
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
 
 
 \begin{document}
@@ -118,7 +124,6 @@ pregled svojih ocena, rasporeda časova, kalendara aktivnosti, spiska nastavnika
 \end{figure}
 
 
-\newpage
 \subsubsection{Slučaj upotrebe: Učenik pristupa svojim ocenama} 
 1. \textbf{Kratak opis:} Učenik pristupa svojim ocenama iz željenog predmeta. Učenik filtrira ocene po željenom kriterijumu. \\
 
@@ -569,12 +574,14 @@ pregled svojih ocena, rasporeda časova, kalendara aktivnosti, spiska nastavnika
 
 9. \textbf{Dodatne informacije}: Obavezna polja obrasca jesu: datum, nivo mere (opomena/ukor razrednog starešine/ukor odeljenskog veća), razlog izricanja mere. Opciono polje je napomena. Lakše disciplinske mere ne povlače smanjenje ocene iz vladanja. Odeljensko veće čine nastavnici koji izvode nastavu u određenom odeljenju. \\
 
+\begin{landscape}
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[scale=0.3]{imgs/BPMN_izricanje_lakse_disciplinske_mere.png}
+        \includegraphics[scale=0.45]{imgs/BPMN_izricanje_lakse_disciplinske_mere.png}
     \end{center}
 \caption{BPMN dijagram procesa Izricanje lakše disciplinske mere učeniku}
 \end{figure}
+\end{landscape}
 
 
 \newpage
@@ -587,7 +594,6 @@ pregled svojih ocena, rasporeda časova, kalendara aktivnosti, spiska nastavnika
 \caption{Dijagram slučajeva upotrebe Direktora}
 \end{figure}
 
-\newpage
 \subsubsection{Slučaj upotrebe: Direktor ažurira kalendar aktivnosti}
 1. \textbf{Kratak opis:} Direktor pristupa kalendaru aktivnosti i vrši željenu izmenu. Sistem validira i čuva unete podatke i obaveštava direktora o uspešnoj izmeni kalendara aktivnosti.\\
 
@@ -624,13 +630,14 @@ pregled svojih ocena, rasporeda časova, kalendara aktivnosti, spiska nastavnika
 
 9. \textbf{Dodatne informacije}: Moguće aktivnosti za svaki datum su: nastavni dan, nenastavni dan, raspust i državni praznik. Direktor nema opciju da ukloni ili doda državni praznik. \\
 
+\begin{landscape}
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[scale=0.3]{imgs/BPMN_izmena_kalendara.png}
+        \includegraphics[scale=0.42]{imgs/BPMN_izmena_kalendara.png}
     \end{center}
 \caption{BPMN dijagram procesa Ažuriranje kalendara aktivnosti}
 \end{figure}
-
+\end{landscape}
 
 \subsubsection{Slučaj upotrebe: Direktor ažurira dnevnik} 
 1. \textbf{Kratak opis:} Direktor pristupa elektronskom dnevniku izabranog odeljenja i vrši željenu izmenu. Sistem validira i čuva unete podatke i obaveštava direktora o uspešnoj izmeni dnevnika. \\
@@ -762,7 +769,7 @@ P4:
 
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[scale=0.35]{imgs/BPMN_pravljenje_finansijskog_izvestaja.png}
+        \includegraphics[scale=0.37]{imgs/BPMN_pravljenje_finansijskog_izvestaja.png}
     \end{center}
 \caption{BPMN dijagram procesa Pravljenje finansijskog izveštaja}
 \end{figure}
@@ -805,14 +812,15 @@ P4:
 
 9. \textbf{Dodatne informacije}: Obavezna polja obrasca jesu: datum, nivo mere (ukor direktora/ukor nastavničkog veća/isključenje učenika iz škole), razlog izricanja mere. Opciono polje je napomena. Teže disciplinske mere povlače smanjenje ocene iz vladanja (ukor direktora na 4 ili 3, ukor nastavničkog veća na 2, isključenje iz škole na 1). Nastavničko veće čine svi nastavnici zaposleni u školi. U slučaju isključenja učenika iz škole administrator će deaktivirati nalog učenika. \\
 
+
+\begin{landscape}
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[scale=0.3]{imgs/BPMN_izricanje_teze_disciplinske_mere.png}
+        \includegraphics[scale=0.45]{imgs/BPMN_izricanje_teze_disciplinske_mere.png}
     \end{center}
 \caption{BPMN dijagram procesa Izricanje teže disciplinske mere učeniku}
 \end{figure}
-
-
+\end{landscape}
 
 
 \newpage
@@ -820,13 +828,12 @@ P4:
 
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[scale=0.4]{imgs/admin_use_case.png}
+        \includegraphics[scale=0.5]{imgs/admin_use_case.png}
     \end{center}
 \caption{Dijagram slučajeva upotrebe Administratora sistema}
 \end{figure}
 
 
-\newpage
 \subsubsection{Slučaj upotrebe: Administrator kreira nalog novog korisnika} 
 1. \textbf{Kratak opis:} Administrator pravi profil za novog korisnika sistema (nastavnika ili učenika). Sistem validira podatke i vraća potvrdu o uspešno kreiranom korisniku. Korisnik se prijavljuje na sistem i kreira svoju lozinku. \\
 
@@ -1081,14 +1088,14 @@ P2:
 
 9. \textbf{Dodatne informacije}: Maksimalna opterećenost nastavnika definisana je pravilnikom škole. Dodeljene nadležnosti nastavnicima uzimaju se u obzir kao kriterijum prilikom pravljenja rasporeda časova. \\
 
-
+\begin{landscape}
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[scale=0.28]{imgs/BPMN_dodela_nadleznosti.png}
+        \includegraphics[scale=0.4]{imgs/BPMN_dodela_nadleznosti.png}
     \end{center}
 \caption{BPMN dijagram procesa Dodela nadležnosti nad odeljenjem nastavniku}
 \end{figure}
-
+\end{landscape}
 
 \subsubsection{Slučaj upotrebe: Administrator odabira nastavnika za koordinatora vannastavne aktivnosti}
 1. \textbf{Kratak opis:} Administrator pristupa korisničkom profilu nastavnika i proglašava ga za koordinatora odabrane vannastavne aktivnosti. Sistem validira i čuva izmene i obaveštava administratora o uspešno odabranom koordinatoru. \\
@@ -1128,13 +1135,14 @@ P2:
 
 9. \textbf{Dodatne informacije}: Škola nudi vannastavne aktivnosti kao što su: sportske sekcije, glumačka sekcija, muzička sekcija, besedništvo. Koordinator za vannastavnu aktivnost se bira na nivou škole. Vannastavne aktivnosti održavaju se u jednom terminu u radnoj nedelji. Maksimalna opterećenost nastavnika definisana je pravilnikom škole. Obaveze nastavnika koji su koordinatori neke vannastavne aktivnosti uzimaju se u obzir kao kriterijum prilikom pravljenja rasporeda časova. \\
 
+\begin{landscape}
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[scale=0.28]{imgs/BPMN_odabir_koordinatora.png}
+        \includegraphics[scale=0.4]{imgs/BPMN_odabir_koordinatora.png}
     \end{center}
 \caption{BPMN dijagram procesa Odabir nastavnika za koordinatora vannastavne aktivnosti}
 \end{figure}
-
+\end{landscape}
 
 
 \end{document}

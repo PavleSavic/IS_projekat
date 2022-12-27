@@ -317,14 +317,22 @@ pregled svojih ocena, rasporeda časova, kalendara aktivnosti, spiska nastavnika
 
 6. \textbf{Alternativni tokovi:}
 \begin{enumerate} [label=(\roman*)]
-\item Nastavnik unosi nevalidne podatke u formular - Ako u koraku (f) sistem utvrdi neispravno polje formulara sistem obaveštava nastavnika obeležavanjem nevalidnog polja. Nastavnik ispravlja neispravno polje. Proces se nastavlja iz koraka (d).
+\item Nastavnik unosi nevalidne podatke u formular - Ako u koraku (f) sistem utvrdi neispravno polje formulara (prazno obavezno polje, nastavnik ne predaje odabranom odeljenju) sistem obaveštava nastavnika obeležavanjem nevalidnog polja. Nastavnik ispravlja neispravno polje. Proces se nastavlja iz koraka (d).
 \end{enumerate}
 
 7. \textbf{Podtokovi}: - \\
 
 8. \textbf{Specijalni zahtevi}: - \\
 
-9. \textbf{Dodatne informacije}: Obavezna polja formulara jesu: datum, oznaka odeljenja, nastavna tema i spisak odsutnih učenika. Opciona polja su: literatura za temu, domaći zadatak i napomene. \\
+9. \textbf{Dodatne informacije}: Obavezna polja formulara jesu: datum, odeljenje, nastavna tema i spisak odsutnih učenika. Opciona polja su: literatura za temu, domaći zadatak i napomene. \\
+
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.3]{imgs/BPMN_evidentiranje_casa.png}
+    \end{center}
+\caption{BPMN dijagram procesa Evidentiranje održanog časa}
+\end{figure}
+
 
 
 \subsubsection{Slučaj upotrebe: Nastavnik unosi dopunski ili dodatni čas u raspored časova} 

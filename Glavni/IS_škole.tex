@@ -67,7 +67,7 @@
 
 \subsection{Uvod i osnovna ideja}
 	Projekat koji je predstavljen u nastavku predstavlja rad u okviru predmeta ``Informacioni sistemi'' na master studijama Matematičkog fakulteta u Beogradu. U njemu su predstavljene neke ideje i znanja stečeni na ovom kursu.
-	Osnovna ideja projekta je pravljenje informacionog sistema koji bi mogao da se koristi u nastavi u srednjim školama. Akcenat je stavljen na funkcionalnostima koje pruža nastavnički dnevnik poput evidentiranja časova i upisivanja ocena, ali takođe i pruža pregled relevantnih informacija u zavisnosti od grupe kojoj korisnik pripada. Projekat je predstavljen kao skup raznih dijagrama ( dijagram slučajeva upotrebe, dijagram klasa, dijagram aktivnost, BPMN dijagram i drugi) koji omogućavaju kako specifičniji, tako i opštiji pogled na celokupni sistem, odnosno neke njegove delove.
+	Osnovna ideja projekta je pravljenje informacionog sistema koji bi mogao da se koristi u nastavi u srednjim školama. Akcenat je stavljen na funkcionalnosti koje pruža nastavnički dnevnik poput evidentiranja časova i upisivanja ocena, ali takođe i pruža pregled relevantnih informacija u zavisnosti od grupe kojoj korisnik pripada. Projekat je predstavljen kao skup različitih dijagrama (dijagram slučajeva upotrebe, dijagram klasa, dijagram aktivnost, BPMN dijagram i drugi) koji omogućavaju kako specifičniji, tako i opštiji pogled na celokupni sistem, odnosno neke njegove delove.
 
 \subsection{Korisnici sistema}
 	U ovom sistemu korisnik može biti prepoznat kao član jedne od pet navedenih grupa korisnika:
@@ -87,7 +87,7 @@ mogućnosti za rad u ovom sistemu.
 pregled svojih ocena, rasporeda časova, kalendara aktivnosti, spiska nastavnika i druge. Od omogućenih funkcionalnosti može se izdvojiti prijavljivanje na vannastavne aktivnosti.
  
 	\item \textbf{Nastavnik} \\
-	Nastavnici predstavljaju predavače u školi. Na početku svake školske godine dodaju im se odeljenje kojima predaju, raspored časova kao i spisak predmeta koje te godine predaju. Ove informacije se mogu izmeniti u toku školske godine. Nastavnici su odgovorni za održavanje nastave i evidentiranje ocena i izostanaka učenika. Što se tiče manipulacije časovima, imaju mogućnost unošenja dopunskog ili dodatnog časa u raspored. Prilikom pregleda ocena učenika sistem nastavnicima omogućava viđenje samo ocena iz svog predmeta.
+	Nastavnici predstavljaju predavače u školi. Na početku svake školske godine dodaju im se odeljenja kojima predaju, raspored časova kao i spisak predmeta koje te godine predaju. Ove informacije se mogu izmeniti u toku školske godine. Nastavnici su odgovorni za održavanje nastave i evidentiranje ocena i izostanaka učenika. Što se tiče manipulacije časovima, imaju mogućnost unošenja dopunskog ili dodatnog časa u raspored. Prilikom pregleda ocena učenika sistem nastavnicima omogućava viđenje samo ocena iz svog predmeta.
 	\item \textbf{Razredni starešina} \\
 	Razredne starešine predstavljaju posebnu grupu nastavnika. Svakom odeljenju je dodat tačno jedan razredni starešina. Razrednim starešinama se dodaju funkcionalnosti za rad sa svojim odeljenjem i njegovim učenicima. Neke od tih funkcionalnosti su opravdavanje izostanaka i izricanje lakše disciplinske mere učenicima. Oni takođe imaju mogućnost pregleda ocena svojih učenika iz svih predmeta.
 	\item \textbf{Direktor} \\
@@ -555,7 +555,7 @@ pregled svojih ocena, rasporeda časova, kalendara aktivnosti, spiska nastavnika
 
 \begin{figure} [!ht]
     \begin{center}
-        \includegraphics[scale=0.34]{imgs/Dijagram_sekvence_razredni_pravda_cas.png}
+        \includegraphics[scale=0.3]{imgs/Dijagram_sekvence_razredni_pravda_cas.png}
     \end{center}
 \caption{Dijagram sekvence Opravdavanje izostanka učeniku}
 \end{figure}
@@ -904,7 +904,7 @@ P4:
 
 6. \textbf{Alternativni tokovi:}
 \begin{enumerate} [label=(\roman*)]
-\item Administrator unosi nevalidne podatke u formular - Ako u koraku (e) glavnog toka sistem utvrdi neispravno polje formulara (prazno obavezno polje ili u sistemu već postoji korisnik sa istim JMBG), sistem obaveštava administratora obeležavanjem nevalidnog polja. Administrator ispravlja neispravno polje. Proces se nastavlja iz koraka (d) glavnog toka.
+\item Administrator unosi nevalidne podatke u formular - Ako u koraku (e) glavnog toka sistem utvrdi neispravno polje formulara (prazno obavezno polje ili u sistemu već postoji korisnik sa istim JMBG), sistem obaveštava administratora obeležavanjem nevalidnog polja. Administrator ispravlja neispravno polje. Proces se nastavlja iz koraka (c) glavnog toka.
 \item Novokreiranom korisniku nije stigao e-mail - Ukoliko u koraku (h) glavnog toka korisnik utvrdi da mu nije stigao e-mail, zahteva ponovno slanje istog. Proces se nastavlja iz koraka (g) glavnog toka.
 \item Neispravan format lozinke - Ako u koraku (k) glavnog toga sistem utvdi da se pokušava postavljanje kratke ili nedovoljno bezbedne lozinke, sistem odbija postavljanje lozinke i o tome obaveštava korisnika. Korisnik ispravlja lozinku. Proces se nastavlja iz koraka (i) glavnog toka.
 \end{enumerate}
@@ -971,7 +971,7 @@ P2:
     \begin{center}
         \includegraphics[scale=0.35]{imgs/BPMN_deaktivacija_naloga.png}
     \end{center}
-\caption{BPMN dijagram proces Deaktiviranje naloga korisnika}
+\caption{BPMN dijagram procesa Deaktiviranje naloga korisnika}
 \end{figure}
 
 
@@ -1226,7 +1226,7 @@ Pri razmatranju tipa arhitekture koji bi bio u skladu sa funkcionalnim i nefunkc
     \item Sloj podataka - Obuhvata relacionu bazu podataka i sistem za upravljanje bazom podataka. Tehnologije: PostgreSQL
 \end{enumerate}
 
-Tip aplikacije je Veb aplikacija, podrazumeva jedan serverski i više klijentskih računara. Podela odgovornosti na tri sloja značajna je u kontekstu: bržeg razvoja aplikacije, povećane skalabilnost i pouzdanosti. Zbog namene aplikacije veoma je značajan aspekt sigurnosti - prezentacioni sloj i sloj podataka ne mogu komunicirati direktno, aplikativni sloj zadužen je da spreči potencijalne maliciozne napade (poput SQL Injection-a). Kao posledica prirode podataka veoma značajne su nam superiorne performanse koje PostgreSQL ima u odnosu na konkurenciju u slučaju rada sa velikim kolekcijama podataka i složenijim upitima (koji uključuju pisanje).
+Tip aplikacije je Veb aplikacija, podrazumeva jedan serverski i više klijentskih računara. Podela odgovornosti na tri sloja značajna je u kontekstu: bržeg razvoja aplikacije, povećane skalabilnosti i pouzdanosti. Zbog namene aplikacije veoma je značajan aspekt sigurnosti - prezentacioni sloj i sloj podataka ne mogu komunicirati direktno, aplikativni sloj zadužen je da spreči potencijalne maliciozne napade (poput SQL Injection-a). Kao posledica prirode podataka veoma značajne su nam superiorne performanse koje PostgreSQL ima u odnosu na konkurenciju u slučaju rada sa velikim kolekcijama podataka i složenijim upitima (koji uključuju pisanje).
 
 \newpage
 \subsection{Dijagram arhitekture sistema}

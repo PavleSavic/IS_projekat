@@ -1215,4 +1215,46 @@ P2:
 \end{figure}
 
 
+\section{Arhitektura sistema}
+
+\subsection{Kratak opis arhitekture}
+
+Pri razmatranju tipa arhitekture koji bi bio u skladu sa funkcionalnim i nefunkcionalnim zahtevima, koji su postavljeni pred sistem, izabrana je slojevita klijent-server arhitektura. Izdvojena su tri osnovna sloja:
+\begin{enumerate}
+    \item Prezentacioni sloj (korisnički interfejs) - Najviši sloj omogućava krajnjem korisniku interakciju sa aplikacijom (prikaz i unošenje podataka). Funkcionalnosti koje pruža specifične su za svaki tip korisnika. Pokreće se u Veb pregledaču. Tehnologije: HTML, CSS, JavaScript (React.js biblioteka).
+    \item Logički (aplikativni) sloj - Predstavlja centralni deo poslovne logike aplikacije i služi kao posrednik u komunikaciji između dva krajnja sloja. Obrađuje informacije prikupljene na prezentacionom sloju. Dohvata, dodaje, briše ili menja podatke u sloju podataka. Tehnologije: Node.js, React.js.
+    \item Sloj podataka - Obuhvata relacionu bazu podataka i sistem za upravljanje bazom podataka. Tehnologije: PostgreSQL
+\end{enumerate}
+
+Tip aplikacije je Veb aplikacija, podrazumeva jedan serverski i više klijentskih računara. Podela odgovornosti na tri sloja značajna je u kontekstu: bržeg razvoja aplikacije, povećane skalabilnost i pouzdanosti. Zbog namene aplikacije veoma je značajan aspekt sigurnosti - prezentacioni sloj i sloj podataka ne mogu komunicirati direktno, aplikativni sloj zadužen je da spreči potencijalne maliciozne napade (poput SQL Injection-a). Kao posledica prirode podataka veoma značajne su nam superiorne performanse koje PostgreSQL ima u odnosu na konkurenciju u slučaju rada sa velikim kolekcijama podataka i složenijim upitima (koji uključuju pisanje).
+
+\newpage
+\subsection{Dijagram arhitekture sistema}
+
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.6]{imgs/arhitekturav2.jpeg}
+    \end{center}
+\caption{Dijagram arhitekture sistema}
+\end{figure}
+
+\newpage
+\subsection{Dijagram komponenti sistema}
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.5]{imgs/dijagram_komponenti.png}
+    \end{center}
+\caption{Dijagram komponenti sistema}
+\end{figure}
+
+\newpage
+\subsection{Dijagram isporučivanja sistema}
+\begin{figure} [!ht]
+    \begin{center}
+        \includegraphics[scale=0.5]{imgs/Dijagram isporucivanja.vpd.jpg}
+    \end{center}
+\caption{Dijagram isporučivanja sistema}
+\end{figure}
+
+
 \end{document}
